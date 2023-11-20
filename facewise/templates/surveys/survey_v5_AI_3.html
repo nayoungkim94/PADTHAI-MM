@@ -1,0 +1,1003 @@
+<html>
+
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style type="text/css">
+        /* Three image containers (use 25% for four, and 50% for two, etc) */
+        
+        .column {
+            float: left;
+            width: 50%;
+            padding: 20px 0px 0px 50px;
+        }
+        
+        @media screen and (max-width: 500px) {
+            .column {
+                width: 100%;
+            }
+        }
+        /* Clear floats after image containers */
+        
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        
+        .buttons {
+            border-radius: 4px;
+            display: inline-block;
+            cursor: pointer;
+            font-family: Arial;
+            font-size: 13px;
+            font-weight: bold;
+            padding: 6px 15px;
+            text-decoration: none;
+            text-shadow: 0px 1px 0px #5b8a3c;
+            margin-left: 6px;
+            width: 100px;
+        }
+        
+        .aibtn {
+            border-radius: 4px;
+            color: #ffffff;
+            display: inline-block;
+            cursor: pointer;
+            font-family: Arial;
+            font-size: 13px;
+            font-weight: bold;
+            padding: 6px 15px;
+            text-decoration: none;
+            width: 200px;
+            border: solid 5px #000;
+            border-width: 0 4px 5px 0;
+            border-radius: 5px;
+            background: linear-gradient(to bottom, #f8df20 5%, #f8df20 100%);
+            border-color: transparent #f5e77a #d3bc0d transparent;
+            color: #000000;
+            background-color: #2b638f;
+            background-clip: padding-box;
+        }
+        
+        #inter_btn {
+            color: #000;
+            background: linear-gradient(to bottom, #ffffff 5%, #ffffff 100%);
+            background-color: #ffffff;
+            border: solid 5px #000;
+            border-width: 1px 4px 5px 1px;
+            border-radius: 5px;
+            border-color: #000 #000 #000 #000;
+            background-clip: padding-box;
+        }
+        
+        #next_btn {
+            color: #ffffff;
+            background: linear-gradient(to bottom, #1681b3 5%, #1681b3 100%);
+            background-color: #2197ce;
+            border: solid 5px #000;
+            border-width: 1px 4px 5px 1px;
+            border-radius: 5px;
+            border-color: #3b71ac #5184b6 #3b71ac #3b71ac;
+            background-clip: padding-box;
+        }
+        
+        #btn1 {
+            color: #ffffff;
+            font-weight: 900;
+            text-shadow: 0px 0px #000000;
+            background: linear-gradient(to bottom, #208838 5%, #208838 100%);
+            background-color: #28A745;
+            border: solid 5px #000;
+            border-width: 0 4px 5px 0;
+            border-radius: 5px;
+            border-color: transparent #30E750 #17C636 transparent;
+            background-clip: padding-box;
+        }
+        
+        #btn2 {
+            color: #ffffff;
+            font-weight: 900;
+            text-shadow: 0px 0px #000000;
+            background-color: #BA0B11;
+            border: solid 5px #000;
+            border-width: 0 4px 5px 0;
+            border-radius: 5px;
+            border-color: transparent #FC585C #F33439 transparent;
+            background-clip: padding-box;
+        }
+        
+        #btn3 {
+            color: #000000;
+            font-weight: 900;
+            text-shadow: 0px 0px #000000;
+            background-color: #2b638f;
+            border: solid 5px #000;
+            border-width: 0 4px 5px 0;
+            border-radius: 5px;
+            background: linear-gradient(to bottom, #f8df20 5%, #f8df20 100%);
+            border-color: transparent #f5e77a #d3bc0d transparent;
+        }
+        
+        .buttons:active {
+            position: relative;
+            top: 1px;
+        }
+        
+        .border {
+            border-width: 10px !important;
+        }
+        
+        .dashedborder {
+            border-style: dashed !important;
+        }
+        
+        .progress .bar {
+            -webkit-transition: none !important;
+            -moz-transition: none !important;
+            -ms-transition: none !important;
+            -o-transition: none !important;
+            transition: none !important;
+        }
+        
+        .active_btn_pre {
+            background-color: #23ad35;
+            color: white;
+            padding: 1em;
+            text-decoration: none;
+        }
+        
+        .active_btn_pre:hover:not(.active) {
+            background-color: #23ad35;
+            color: white;
+            padding: 1em;
+            text-decoration: none;
+        }
+        
+        .inactive_btn_pre {
+            background-color: #566963;
+            color: rgb(163, 163, 163);
+            padding: 1em;
+            text-decoration: none;
+        }
+        
+        .inactive_btn_pre_st {
+            background-color: #566963;
+            color: rgb(163, 163, 163);
+            padding: 1em;
+            text-decoration: none;
+        }
+        
+        .active_btn_pre_st {
+            background-color: #23ad35;
+            color: white;
+            padding: 1em;
+            text-decoration: none;
+        }
+        
+        .inactive_btn_pre:hover:not(.active) {
+            background-color: #566963;
+            color: rgb(163, 163, 163);
+            padding: 1em;
+            text-decoration: none;
+        }
+        
+        .inactive_btn_pre_st:hover:not(.active) {
+            background-color: #566963;
+            color: rgb(163, 163, 163);
+            padding: 1em;
+            text-decoration: none;
+        }
+        
+        .active_btn_pre_st:hover:not(.active) {
+            background-color: #23ad35;
+            color: white;
+            padding: 1em;
+            text-decoration: none;
+        }
+        
+        .inactive_btn_pre_btn {
+            background-color: #566963;
+            color: rgb(163, 163, 163);
+            padding: 1em;
+            text-decoration: none;
+            text-shadow: 0px;
+            border: 0;
+            cursor: pointer;
+        }
+        
+        .inactive_btn_pre_btn:hover:not(.active) {
+            background-color: #566963;
+            color: white;
+            padding: .3em;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .inactive_btn_pre_btn_st:hover:not(.active) {
+            background-color: #566963;
+            color: white;
+            padding: .3em;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+
+    <script language='Javascript'>
+        var not_started = true;
+        var qualtrics_id_1 = '';
+        var qualtrics_id_2 = '';
+        var first_survey = false,
+            qual_id_btn = false;
+        var remaining_ids = [];
+
+        function loadFile(filePath) {
+            var result = null;
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("GET", filePath, false);
+            xmlhttp.send();
+            if (xmlhttp.status == 200) {
+                result = xmlhttp.responseText;
+            }
+            return result;
+        }
+
+        function start_btn_event() {
+            // check if extension is enabled
+            if (!qual_id_btn)
+                return false;
+
+            if (can_continue == false) {
+                alert('Please enable the "Allow CORS" extention and refresh the page');
+                return;
+            }
+
+            // save both blocks -> EDIT ME
+            var filenames = loadFile("https://samples4project.s3.us-east-2.amazonaws.com/final_exp/final_pahse.txt").split('\n');
+
+            for (var i = 0; i < filenames.length; i++) {
+                if (filenames[i] != '')
+                    files.push(filenames[i].split(', '));
+            }
+
+            // set conditions for the next batch
+            mid_ind = 10000;
+            for (let i = 0; i < files.length; i++) {
+                remaining_ids.push(i);
+            }
+
+
+            current_pair_ind = 0;
+            document.getElementById('start_btn').style.visibility = 'hidden';
+            document.getElementById('qualid').style.visibility = 'hidden';
+            document.getElementById('top_pad').style.visibility = 'hidden';
+            document.getElementById('textq').style.visibility = 'hidden';
+            document.getElementById('textmturk').style.visibility = 'hidden';
+            document.getElementById('survey_form').style.visibility = 'visible';
+            not_started = false;
+            document.getElementById('survey_form').style.visibility = 'visible';
+            document.getElementById('start_btn').remove();
+            document.getElementById('slide').remove();
+            document.getElementById('top_pad').style.paddingTop = '0px';
+
+            return false;
+        }
+
+        function get_qual_id() {
+            if (!first_survey)
+                return false;
+            qualtrics_id_1 = document.getElementById('qualid').value;
+            if (qualtrics_id_1 != '' && !isNaN(qualtrics_id_1) && qualtrics_id_1.indexOf('.') == -1) {
+                $('#start_btn').removeClass('inactive_btn_pre_st').addClass('active_btn_pre_st');
+                qual_id_btn = true;
+            } else {
+                alert('Please enter your provided Qualtrics ID!');
+            }
+
+            return false;
+        }
+
+        function get_qual_id_2() {
+            if (!first_survey)
+                return false;
+            qualtrics_id_2 = document.getElementById('qualid').value;
+            if (qualtrics_id_2 != '' && !isNaN(qualtrics_id_2) && qualtrics_id_2.indexOf('.') == -1) {
+                $('#start_btn').removeClass('inactive_btn_pre').addClass('active_btn_pre');
+                $('#start_btn').click(function() {
+                    submit_survey();
+                    return false;
+                });
+                qual_id_btn = true;
+            } else {
+                alert('Please enter your provided Qualtrics ID!');
+            }
+
+            return false;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="my_survey">
+        <div class="container" id="top_container">
+            <div id='top_pad' class='row align-center mx-auto d-block' style="padding-top: 50;">
+                <img src="http://www.public.asu.edu/~amosalla/slide.png" id='slide' class="img-fluid" style="padding-bottom: 50px;">
+                <label for="qualid" id="textmturk"><strong>Step 1:</strong> Please complete this survey <strong>first</strong> using your MTurk Worker ID and provide the generated code (make sure your browser supports JavaScript): </label><br><br>
+
+                <div>
+                    <a class="active_btn_pre" onclick="$('#qual_1').removeClass('inactive_btn_pre').addClass('active_btn_pre'); first_survey = true;" href="https://asu.co1.qualtrics.com/jfe/form/SV_4MfbxVNtDXYRHSJ" target="_blank" style="padding-left: 55px; padding-right: 55px;">PART I, First Survey</a>
+                </div><br><br>
+
+                <div class="row align-center mx-auto">
+                    <div class="form-group col-xs-4">
+                        <label style="padding-right: 5px;" for="qualid" id="textq"><strong>Step 2:</strong> Submit validation code 1 that Qualtrics provided: </label>
+                    </div>
+                    <div class="form-group col-xs-4" style="margin-right: 20px;">
+                        <input type="text" id="qualid">
+                    </div>
+
+                    <div class="form-group col-xs-4">
+                        <a id="qual_1" class="inactive_btn_pre" onclick="get_qual_id(); return false;" href="" style="padding: .3em;">Submit Validation Code 1</a>
+                    </div>
+                </div>
+                <!-- step two -->
+
+                <br>
+                <div class="form-group col-xs-4">
+                    <a id="start_btn" class="inactive_btn_pre_st" onclick="start_btn_event(); return false;" href="" style="padding-left: 24.17px; padding-right: 24.18px; text-decoration: none;">PART II, Face-Matching Task</a>
+                </div>
+
+                <br><br>
+
+            </div>
+
+        </div>
+        <div id="survey_form" style="visibility: hidden; margin-top: -200px;">
+            <!-- HTML to handle creating the HIT form -->
+            <form name='mturk_form' method='post' id='mturk_form' action='https://analog-height-296717.uc.r.appspot.com/record_prolific_results'>
+                <input type='hidden' value='' name='assignmentId' id='assignmentId' />
+                <!-- This is where you define your question(s) -->
+
+                <div class="container" id="images">
+                    <div class="row" style="margin-top: 20px;">
+                        <!-- images row -->
+
+                        <div class="col">
+                            <img id="img1" src="" alt="img1" style="width:200px;height:200px;" class="float-right">
+                        </div>
+
+                        <div class="col align-self-center">
+                            <img id="img2" src="" alt="img2" style="width:200px;height:200px;" class="float-left">
+                        </div>
+                    </div>
+
+                    <div class="row text-center d-flex justify-content-center" id='row1' style="margin-top: 35px;">
+                        <div style="font-family:tahoma,garamond,serif;font-size:30px;"><b id='main_text'>Are these the same person?</b></div>
+                    </div>
+
+                    <div id="inter" class="row d-flex justify-content-center" style="margin-top: 30px;  margin-bottom: -65px;">
+                        <button class="buttons" id="next_btn" type="button" onclick="" style="font-size:18px; width: 170px; height: 80px;">Agree, Next</button>
+                        <button class="buttons" id="inter_btn" type="button" onclick="" style="font-size:18px; width: 170px; height: 80px;">Disagree, Intervene</button>
+                    </div>
+
+                    <div class="row d-flex justify-content-center" id="btns-row" style="margin-top: 30px;">
+                        <div id="btns_div" class="align-self-center">
+                            <button class="buttons" id="btn1" type="button" onclick="" style="font-size:18px; width: 150px; height: 80px;">Same</button>
+                            <button class="buttons" id="btn2" type="button" onclick="" style="font-size:18px; width: 150px; height: 80px;">Different</button>
+                            <!-- <button class="buttons" id="btn3" type="button" onclick="">Unsure</button> -->
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center" style="margin-top: -170px; height: 200px; z-index: -1;">
+                        <b class="align-self-center" id="final-dec" style="font-family:tahoma,garamond,serif;font-size:40px;"></b>
+                    </div>
+                    <div class="row justify-content-center" style="margin-top: -140px; height: 200px; z-index: -1;">
+                        <b class="align-self-center" id="ground-truth" style="font-family:tahoma,garamond,serif;font-size:40px;"></b>
+                    </div>
+                    <div class="row justify-content-center" style="margin-top: -140px; height: 200px; z-index: -1;">
+                        <b class="align-self-center" id="ai-truth" style="font-family:tahoma,garamond,serif;font-size:40px;"></b>
+                    </div>
+
+                </div>
+                <input type="submit" id="submitButton" name="commit" value="Complete HIT" style="visibility: hidden;" />
+            </form>
+        </div>
+    </div>
+    <script>
+        var pro_params = '{{ ', '.join(params.values()) }}';
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script language='javascript'>
+        //When the page has loaded.
+        var current_time = 5;
+        var time_limit = 50000 * 30; // 60 * 30;
+        var total_time = 0;
+        var clicked = false;
+        var aipair = false;
+        document.getElementById('survey_form').style.visibility = 'hidden';
+        var files = [];
+        var can_continue = false;
+        var filenames;
+        var next_clicked = false;
+        var saved_container = '';
+        var mid_ind = -1;
+        var qualtrics_mid = '<label for="qualid" id="textmturk" style="margin-top: 50px;"><strong>Step 3:</strong> Thanks for completing the second part. Now proceed to the last part using your MTurk Worker ID. Completion of the second survey will generate a new validation code to submit: </label><br><br><div><a class="active_btn_pre" onclick="$(\'#qual_1\').removeClass(\'inactive_btn_pre\').addClass(\'active_btn_pre\'); first_survey = true;" href="https://asu.co1.qualtrics.com/jfe/form/SV_6V77TV5eM0lhEXP" target="_blank" style="padding-left: 5px; padding-right: 5px;">PART III, Start Qualtrics Survey</a></div> <br><br><div class="row align-center mx-auto"><div class="form-group col-xs-4"><label style="padding-right: 5px;" for="qualid" id="textq">Submit the validation code that Qualtrics provided: </label></div><div class="form-group col-xs-4" style="margin-right: 20px;"><input type="text" id="qualid"></div><div class="form-group col-xs-4"><a id="qual_1" class="inactive_btn_pre" onclick="get_qual_id_2(); return false;" href="" style="padding: .3em;">Submit Validation Code 2</a></div></div> <br><br><div style="padding-bottom: 100px;"><a id="start_btn" class="inactive_btn_pre" onclick="return false;" href="" style="padding-left: 59.745px; padding-right:59.745px;">Submit Survey</a></div>'
+
+        var timer_ext = setInterval(function() {
+            try {
+                filenames = loadFile("https://samples4project.s3.us-east-2.amazonaws.com/pairs.txt").split('\n');
+                clearInterval(timer_ext);
+                can_continue = true;
+            } catch (err) {
+                // pass
+            }
+        }, 500);
+
+        function arrayRemove(arr, value) {
+            return arr.filter(function(ele) {
+                return ele != value;
+            });
+        }
+
+        // test the new condition
+        var probs = Array(0.0, 1.0, 0.5, 0.75, 0.25);
+        var decisions = Array('Same', 'Different', 'Unsure');
+        var current_condition = 1; // Math.floor(Math.random() * 2);
+        var soft_prob = probs[2];
+        document.getElementById('start_btn').style.visibility = 'visible';
+        var current_pair_ind;
+        var user_result = {}
+        var last_btns_click = -1;
+
+        // disable decision buttons
+        hide_buttons();
+
+        // set button events
+        document.getElementById("btn1").onclick = function() {
+            if (add_user_response(1)) hide_buttons();
+        };
+        document.getElementById("btn2").onclick = function() {
+            if (add_user_response(2)) hide_buttons();
+        };
+        // document.getElementById("btn3").onclick = function () {if(add_user_response(3)) hide_buttons();};
+        document.getElementById("inter_btn").onclick = function() {
+            intervene();
+        };
+        document.getElementById("next_btn").onclick = function() {
+            go_next();
+        };
+
+        // create the time here
+        current_time = 0;
+        var wait_flag = 0;
+        var switched = false;
+        var show_final_dec = false;
+        var user_decided = false;
+        var clicked_count = 0;
+        var s_time, c_time, e_time;
+        var condition = 0;
+        var show_case;
+        var decision_changed = false;
+        var resumed = false;
+
+        var timer = setInterval(survey_logic, 1000);
+
+        function survey_logic() {
+            if (not_started == false) {
+                current_time -= 1;
+                total_time += 1;
+
+                if (total_time >= time_limit || current_pair_ind == files.length) {
+                    document.getElementById('my_survey').style.background = '#ffffff';
+                    stop_survey();
+                }
+
+                if (!resumed && current_time < 0 && show_final_dec && show_case == 1 && !decision_changed) {
+                    // document.getElementById('row1').style.visibility = 'hidden';
+                    document.getElementById('inter').style.visibility = 'hidden';
+                    document.getElementById('btns-row').style.visibility = 'hidden';
+
+                    clicked = false;
+                    aipair = false;
+                    next_clicked = false;
+
+                    document.getElementById('inter').style.visibility = 'visible';
+                    // change the button's text
+                    document.getElementById('inter_btn').innerHTML = 'Disagree with AI, Intervene';
+                    document.getElementById('next_btn').innerHTML = 'Agree with AI, Next';
+
+
+                    // change the displayed text here
+                    f1 = files[current_pair_ind][2];
+
+                    remove_past_borders();
+
+                    if (f1 == 0) {
+                        if (last_btns_click == 1) {
+                            document.getElementById('main_text').innerHTML = 'AI decided that these are the ' + '<span style="color: green;">same</span>' + ' person, <br> and you think these are the <span style="color: green;">same</span> person.';
+                            document.getElementById("img1").classList.add('border');
+                            document.getElementById("img2").classList.add('border');
+                            document.getElementById("img1").classList.add('border-success');
+                            document.getElementById("img2").classList.add('border-success');
+                        } else if (last_btns_click == 2) {
+                            document.getElementById('main_text').innerHTML = 'AI decided that these are the ' + '<span style="color: green;">same</span>' + ' person, <br> and you think these are two <span style="color: red;">different</span> people.';
+                            document.getElementById("img1").classList.add('border');
+                            document.getElementById("img2").classList.add('border');
+                            document.getElementById("img1").classList.add('border-success');
+                            document.getElementById("img2").classList.add('border-success');
+                        }
+                    } else {
+                        if (last_btns_click == 1) {
+                            document.getElementById('main_text').innerHTML = 'AI decided that these are two ' + '<span style="color: red;">different</span>' + ' people, <br> and you think these are the <span style="color: green;">same</span> person.';
+                            document.getElementById("img1").classList.add('border');
+                            document.getElementById("img2").classList.add('border');
+                            document.getElementById("img1").classList.add('border-danger');
+                            document.getElementById("img2").classList.add('border-danger');
+                        } else if (last_btns_click == 2) {
+                            document.getElementById('main_text').innerHTML = 'AI decided that these are two ' + '<span style="color: red;">different</span>' + ' people, <br> and you think these are two <span style="color: red;">different</span> people.';
+                            document.getElementById("img1").classList.add('border');
+                            document.getElementById("img2").classList.add('border');
+                            document.getElementById("img1").classList.add('border-danger');
+                            document.getElementById("img2").classList.add('border-danger');
+                        }
+                    }
+
+                    // show deciding buttons
+                    current_time = 31 * 1000;
+                    // show_buttons();
+                    show_case = 2;
+                } else if (!resumed && ((current_time < 0 && show_final_dec && show_case == 2) || (decision_changed && current_time < 0))) {
+                    e_time = get_time();
+                    // show the final AI's decision: hide the rows and display a simple msg
+                    document.getElementById("img1").classList.remove('dashedborder');
+                    document.getElementById("img2").classList.remove('dashedborder');
+                    document.getElementById('final-dec').style.visibility = 'visible';
+                    if (condition != 3)
+                        document.getElementById('ground-truth').style.visibility = 'visible';
+                    else
+                        document.getElementById('ground-truth').style.visibility = 'hidden';
+                    document.getElementById('row1').style.visibility = 'hidden';
+                    document.getElementById('inter').style.visibility = 'hidden';
+                    document.getElementById('btns-row').style.visibility = 'hidden';
+
+                    if (condition == 1) {
+                        // display AI's decision as well
+                        document.getElementById('ai-truth').style.visibility = 'visible';
+                    }
+
+                    remove_past_borders();
+
+                    // set the final decision
+                    f1 = document.getElementById('img1').getAttribute('src').split('/');
+                    f1 = f1[f1.length - 1].split('_')[1];
+                    f2 = document.getElementById('img2').getAttribute('src').split('/');
+                    f2 = f2[f2.length - 1].split('_')[1];
+
+                    if (user_decided == 1) {
+                        document.getElementById('final-dec').innerHTML = 'Confirmed decision = <span style="color: green;font-family:tahoma,garamond,serif;font-size:40px;">Same</span>';
+                        document.getElementById("img1").classList.add('border');
+                        document.getElementById("img2").classList.add('border');
+                        document.getElementById("img1").classList.add('border-success');
+                        document.getElementById("img2").classList.add('border-success');
+                    } else if (user_decided == 2) {
+                        document.getElementById('final-dec').innerHTML = 'Confirmed decision = <span style="color: red;font-family:tahoma,garamond,serif;font-size:40px;">Different</span>';
+                        document.getElementById("img1").classList.add('border');
+                        document.getElementById("img2").classList.add('border');
+                        document.getElementById("img1").classList.add('border-danger');
+                        document.getElementById("img2").classList.add('border-danger');
+                    } else if (user_decided == 3) {
+                        document.getElementById('final-dec').innerHTML = 'Confirmed decision = <span style="color: #f8df20;font-family:tahoma,garamond,serif;font-size:40px;">Unsure</span>';
+                        document.getElementById("img1").classList.add('border');
+                        document.getElementById("img2").classList.add('border');
+                        document.getElementById("img1").classList.add('border-warning');
+                        document.getElementById("img2").classList.add('border-warning');
+                    }
+
+                    // show the ground truth here
+                    /* if (f1 == f2 && condition != 3) {
+                        document.getElementById('ground-truth').innerHTML = 'Ground truth = <span style="color: green;font-family:tahoma,garamond,serif;font-size:40px;">Same</span>';
+                    } else if (condition != 3) {
+                        document.getElementById('ground-truth').innerHTML = 'Ground truth = <span style="color: red;font-family:tahoma,garamond,serif;font-size:40px;">Different</span>';
+                    } */
+
+                    // final decision timer
+                    // check the condition first (which type is currently showing!)
+                    current_time = 2;
+                    show_case = 1;
+                    show_final_dec = false;
+                    decision_changed = false;
+
+                    // save final AI decision also! 
+                    if (aipair && !clicked) {
+                        // record time
+                        var img1_path = document.getElementById('img1').getAttribute('src').split("/");
+                        var img2_path = document.getElementById('img2').getAttribute('src').split("/");
+                        img1_path = img1_path[img1_path.length - 1];
+                        img2_path = img2_path[img2_path.length - 1];
+
+                        // add to array
+                        user_result[img1_path + ' ' + img2_path + condition.toString()] = user_decided + '|' + clicked + '|' + aipair + '|' + s_time + '|' + c_time + '|' + e_time + '|' + next_clicked + '|' + decision_changed;
+                    }
+
+                    // change the current ind
+                    if (current_pair_ind >= 0) {
+                        if (remaining_ids.length == 0) {
+                            pause_survey();
+                        }
+                        rand_id = Math.floor(Math.random() * remaining_ids.length);
+                        current_pair_ind = remaining_ids[rand_id];
+                        remaining_ids = arrayRemove(remaining_ids, remaining_ids[rand_id]);
+                    }
+                } else if (current_time < 0) {
+                    // if(current_pair_ind >= mid_ind && current_pair_ind >= 5 && !switched) {
+                    //    current_condition = 1 - current_condition;
+                    //    soft_prob = probs[current_condition];
+                    //    switched = true;
+                    // show the second qualtrics survey
+                    //    qual_id_btn = false;
+                    //    pause_survey();
+                    // }
+
+                    resumed = false;
+                    document.getElementById('final-dec').style.visibility = 'hidden';
+                    document.getElementById('ground-truth').style.visibility = 'hidden';
+                    document.getElementById('ai-truth').style.visibility = 'hidden';
+                    document.getElementById('row1').style.visibility = 'visible';
+                    document.getElementById('inter').style.visibility = 'visible';
+                    document.getElementById('btns-row').style.visibility = 'visible';
+
+                    user_decided = false;
+                    wait_flag = false;
+                    show_final_dec = true;
+
+                    // goto next image or case here
+                    // check if the survey is finished
+
+                    // remove past borders
+                    remove_past_borders();
+
+                    // TODO: get a random chance for displaying AI or not
+                    if (current_condition == 1) {
+                        condition = 1;
+                        // display the third condition
+                        show_case = 1;
+
+                        document.getElementById('main_text').innerHTML = 'Are these the same person?';
+                        // document.getElementById('my_survey').style.background = '#64A7B0';
+
+                        clicked = false;
+                        aipair = false;
+                        next_clicked = false;
+                        document.getElementById("img1").style.border = "";
+                        document.getElementById("img2").style.border = "";
+                        remove_past_borders();
+                        $("#img1").attr("src", files[current_pair_ind][0]);
+                        $("#img2").attr("src", files[current_pair_ind][1]);
+                        document.getElementById('inter').style.visibility = 'hidden';
+
+                        // show deciding buttons
+                        current_time = 31 * 1000;
+                        // current_pair_ind = Math.floor((Math.random() * (filenames.length - 1)));
+                        show_buttons();
+                        // set s_time
+                        s_time = get_time();
+                        c_time = 'None';
+
+                    } else {
+                        condition = 3;
+                        show_case = 2;
+                        // Display AI pair
+
+                        aipair = true;
+                        clicked = false;
+                        next_clicked = false;
+                        $("#img1").attr("src", files[current_pair_ind][0]);
+                        $("#img2").attr("src", files[current_pair_ind][1]);
+                        document.getElementById('inter_btn').innerHTML = 'Disagree, Intervene';
+                        document.getElementById('next_btn').innerHTML = 'Agree, Next';
+
+                        document.getElementById('inter').style.visibility = 'visible';
+                        document.getElementById('btns_div').style.visibility = 'hidden';
+
+                        f1 = files[current_pair_ind][2];
+
+                        remove_past_borders();
+
+                        if (f1 == 0) {
+                            // set color and text
+                            document.getElementById("main_text").innerHTML = 'AI decided that these are the <span style="color: green;">same</span> person. What do you think?';
+                            if (current_pair_ind >= 0) {
+                                document.getElementById("img1").classList.add('border');
+                                document.getElementById("img2").classList.add('border');
+                                document.getElementById("img1").classList.add('border-success');
+                                document.getElementById("img2").classList.add('border-success');
+                            }
+                            user_decided = 1;
+                        } else {
+                            document.getElementById("main_text").innerHTML = 'AI decided that these are two <span style="color: red;">different</span> people. What do you think?';
+                            if (current_pair_ind >= 0) {
+                                document.getElementById("img1").classList.add('border');
+                                document.getElementById("img2").classList.add('border');
+                                document.getElementById("img1").classList.add('border-danger');
+                                document.getElementById("img2").classList.add('border-danger');
+                            }
+                            user_decided = 2;
+                        }
+
+                        current_time = 30 * 1000;
+                        // set s_time
+                        s_time = get_time();
+                        c_time = 'None';
+                    }
+
+                }
+
+                // show remaining time
+                var time = time_limit - total_time;
+                var minutes = Math.floor(time / 60);
+                var seconds = time - minutes * 60;
+                var finalTime = str_pad_left(minutes, '0', 2) + ':' + str_pad_left(seconds, '0', 2);
+            }
+
+
+        }
+
+        function get_time() {
+            // returns UTC date time in format dateTtime
+            d = new Date();
+            return d.getUTCMonth() + 1 + '/' + d.getUTCDate() + '/' + d.getUTCFullYear() + 'T' + d.getUTCHours() + ':' + d.getUTCMinutes() + ':' + d.getUTCSeconds() + ':' + d.getUTCMilliseconds();
+        }
+
+        function str_pad_left(string, pad, length) {
+            return (new Array(length + 1).join(pad) + string).slice(-length);
+        }
+
+        function remove_past_borders() {
+            if ($("#img1").hasClass("border-danger")) {
+                document.getElementById("img1").classList.remove('border');
+                document.getElementById("img2").classList.remove('border');
+                document.getElementById("img1").classList.remove('border-danger');
+                document.getElementById("img2").classList.remove('border-danger');
+            } else if ($("#img1").hasClass("border-success")) {
+                document.getElementById("img1").classList.remove('border');
+                document.getElementById("img2").classList.remove('border');
+                document.getElementById("img1").classList.remove('border-success');
+                document.getElementById("img2").classList.remove('border-success');
+            } else if ($("#img1").hasClass("border-warning")) {
+                document.getElementById("img1").classList.remove('border');
+                document.getElementById("img2").classList.remove('border');
+                document.getElementById("img1").classList.remove('border-warning');
+                document.getElementById("img2").classList.remove('border-warning');
+            } else if ($("#img1").hasClass("border")) {
+                document.getElementById("img1").classList.remove('border');
+                document.getElementById("img2").classList.remove('border');
+            }
+        }
+
+        // intervene button
+        function intervene() {
+            // show deciding buttons
+            not_started = true;
+            current_time = 31 * 10000;
+            document.getElementById('inter').style.visibility = 'hidden';
+            // document.getElementById('main_text').innerHTML = 'AI decided that they are ' + '<span style="color: red;">different</span>' + 'but is unsure. What is your decision?';
+            f1 = files[current_pair_ind][2]
+            remove_past_borders();
+
+            if (condition == 1) {
+                document.getElementById("main_text").innerHTML = 'Are these two images of the same person?';
+                show_case = 1;
+                decision_changed = true;
+            } else if (condition == 3) {
+                if (f1 == 0) {
+                    // set color and text
+                    document.getElementById("main_text").innerHTML = 'AI decided that they are the <span style="color: green;">same</span> person, but you intervened. What is your decision?';
+                    document.getElementById("img1").classList.add('border');
+                    document.getElementById("img2").classList.add('border');
+                    document.getElementById("img1").classList.add('border-success');
+                    document.getElementById("img2").classList.add('border-success');
+                    user_decided = 1;
+                } else {
+                    document.getElementById("main_text").innerHTML = 'AI decided that they are two <span style="color: red;">different</span> people, but you intervened. What is your decision?';
+                    document.getElementById("img1").classList.add('border');
+                    document.getElementById("img2").classList.add('border');
+                    document.getElementById("img1").classList.add('border-danger');
+                    document.getElementById("img2").classList.add('border-danger');
+                    user_decided = 2;
+                }
+            }
+
+            not_started = false;
+            show_buttons();
+            c_time = get_time();
+        }
+
+        function go_next() {
+            next_clicked = true;
+            current_time = 0;
+            c_time = get_time();
+            e_time = c_time;
+
+            // save the final result
+            // record time
+            var img1_path = document.getElementById('img1').getAttribute('src').split("/");
+            var img2_path = document.getElementById('img2').getAttribute('src').split("/");
+            img1_path = img1_path[img1_path.length - 1];
+            img2_path = img2_path[img2_path.length - 1];
+
+            // add to array
+            user_result[img1_path + ' ' + img2_path + condition.toString()] = user_decided + '|' + clicked + '|' + aipair + '|' + s_time + '|' + c_time + '|' + e_time + '|' + next_clicked + '|' + decision_changed;
+        }
+
+        // add user response function
+        function add_user_response(resp) {
+            //if (!clicked && !aipair && clicked_count == 0 && condition == 2) {
+            //    alert('Please check the AI\'s suggestion first!');
+            //    return false;
+            //}
+
+            // add to array
+            e_time = get_time();
+
+            // get image pair names
+            var img1_path = document.getElementById('img1').getAttribute('src').split("/");
+            var img2_path = document.getElementById('img2').getAttribute('src').split("/");
+            img1_path = img1_path[img1_path.length - 1];
+            img2_path = img2_path[img2_path.length - 1];
+            user_result[img1_path + ' ' + img2_path + '_uc' + condition.toString() + ' ' + resp.toString()] = resp + '|' + clicked + '|' + aipair + '|' + s_time + '|' + c_time + '|' + e_time + '|' + next_clicked + '|' + decision_changed;
+
+            // check for other stuffbtn2
+            if (current_time >= 31) {
+                current_time = 0;
+            }
+            user_decided = resp;
+
+            if (!aipair) {
+                clicked_count = 1;
+            }
+
+            last_btns_click = resp;
+
+            return true;
+        }
+
+        function show_sugg() {
+            // show AI suggestion
+            f1 = files[current_pair_ind][2];
+            clicked = true;
+
+            remove_past_borders();
+
+            if (f1 == 0) {
+                // set color and text
+                document.getElementById("img1").classList.add('border');
+                document.getElementById("img2").classList.add('border');
+                document.getElementById("img1").classList.add('border-success');
+                document.getElementById("img2").classList.add('border-success');
+                document.getElementById('ai-truth').innerHTML = 'AI decided = <span style="color: green;font-family:tahoma,garamond,serif;font-size:40px;">Same</span>';
+            } else {
+                document.getElementById("img1").classList.add('border');
+                document.getElementById("img2").classList.add('border');
+                document.getElementById("img1").classList.add('border-danger');
+                document.getElementById("img2").classList.add('border-danger');
+                document.getElementById('ai-truth').innerHTML = 'AI decided = <span style="color: red;font-family:tahoma,garamond,serif;font-size:40px;">Different</span>';
+            }
+
+            document.getElementById('ai-truth').style.visibility = 'hidden';
+            c_time = get_time();
+        }
+
+        function submit_survey() {
+            $("#mturk_form").submit(function(eventObj) {
+                $("<input />").attr("type", "hidden")
+                    .attr("name", "user_response")
+                    .attr("value", JSON.stringify(user_result))
+                    .appendTo("#mturk_form");
+
+                $("<input />").attr("type", "hidden")
+                    .attr("name", "condition")
+                    .attr("value", JSON.stringify(current_condition))
+                    .appendTo("#mturk_form");
+
+                $("<input />").attr("type", "hidden")
+                    .attr("name", "qualtrics_id_1")
+                    .attr("value", JSON.stringify(qualtrics_id_1))
+                    .appendTo("#mturk_form");
+                $("<input />").attr("type", "hidden")
+                    .attr("name", "qualtrics_id_2")
+                    .attr("value", JSON.stringify(qualtrics_id_2))
+                    .appendTo("#mturk_form");
+                $("<input />").attr("type", "hidden")
+                    .attr("name", "pro_id_1")
+                    .attr("value", JSON.stringify(pro_params.split(', ')[0]))
+                    .appendTo("#mturk_form");
+                $("<input />").attr("type", "hidden")
+                    .attr("name", "pro_id_2")
+                    .attr("value", JSON.stringify(pro_params.split(', ')[1]))
+                    .appendTo("#mturk_form");
+                $("<input />").attr("type", "hidden")
+                    .attr("name", "pro_id_3")
+                    .attr("value", JSON.stringify(pro_params.split(', ')[2]))
+                    .appendTo("#mturk_form");
+                $("<input />").attr("type", "hidden")
+                    .attr("name", "TID")
+                    .attr("value", "4th")
+                    .appendTo("#mturk_form");
+
+                return true;
+            });
+
+            document.getElementById('submitButton').click();
+        }
+
+        // stop survey func
+        function stop_survey() {
+            // stop survey and show the final prompt
+            clearInterval(timer);
+            document.getElementById('survey_form').style.visibility = 'hidden';
+            document.getElementById('row1').style.visibility = 'hidden';
+            document.getElementById('inter').style.visibility = 'hidden';
+            document.getElementById('btns-row').style.visibility = 'hidden';
+            document.getElementById('btns_div').style.visibility = 'hidden';
+            document.getElementById('survey_form').style.display = 'none';
+            document.getElementById('row1').style.display = 'none';
+            document.getElementById('inter').style.display = 'none';
+            document.getElementById('btns-row').style.display = 'none';
+            document.getElementById('btns_div').style.display = 'none';
+            $('#top_container').html(final_id);
+        }
+
+        function pause_survey() {
+            // stop survey and show the final prompt
+            clearInterval(timer);
+            document.getElementById('survey_form').style.visibility = 'hidden';
+            document.getElementById('row1').style.visibility = 'hidden';
+            document.getElementById('inter').style.visibility = 'hidden';
+            document.getElementById('btns-row').style.visibility = 'hidden';
+            document.getElementById('btns_div').style.visibility = 'hidden';
+            document.getElementById('survey_form').style.display = 'none';
+            document.getElementById('row1').style.display = 'none';
+            document.getElementById('inter').style.display = 'none';
+            document.getElementById('btns-row').style.display = 'none';
+            document.getElementById('btns_div').style.display = 'none';
+            saved_container = $('#top_container').html();
+            $('#top_container').html(qualtrics_mid);
+        }
+
+        function resume_survey() {
+            // stop survey and show the final prompt
+            if (!qual_id_btn)
+                return false;
+            $('#top_container').html(saved_container);
+            document.getElementById('survey_form').style.visibility = 'visible';
+            document.getElementById('row1').style.visibility = 'hidden';
+            document.getElementById('inter').style.visibility = 'hidden';
+            document.getElementById('btns-row').style.visibility = 'hidden';
+            document.getElementById('btns_div').style.visibility = 'hidden';
+            document.getElementById('survey_form').style.display = '';
+            document.getElementById('row1').style.display = '';
+            document.getElementById('inter').style.display = '';
+            document.getElementById('btns-row').style.display = '';
+            document.getElementById('btns_div').style.display = '';
+            timer = setInterval(survey_logic, 1000);
+            current_time = 0;
+            resumed = true;
+            return false;
+        }
+
+        // show and hide buttons functions
+        function show_buttons() {
+            document.getElementById('btns_div').style.visibility = 'visible';
+        }
+
+        function hide_buttons() {
+            document.getElementById('btns_div').style.visibility = 'hidden';
+            document.getElementById('inter').style.visibility = 'hidden';
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>

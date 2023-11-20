@@ -1,0 +1,29 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A simple pie chart with embedded data.",
+  "data": {
+    "values": [
+      {"Keywords": "CARE/HARM Virtue", "value": 0},
+      {"Keywords": "CARE/HARM Vice", "value": 11},
+      {"Keywords": "FAIRNESS/CHEATING Virtue", "value": 4},
+      {"Keywords": "FAIRNESS/CHEATING Vice", "value": 0},
+      {"Keywords": "LOYALTY/BETRAYAL Virtue", "value": 3},
+      {"Keywords": "LOYALTY/BETRAYAL Vice", "value": 2},
+      {"Keywords": "AUTHORITY/SUBVERSION Virtue", "value": 8},
+      {"Keywords": "AUTHORITY/SUBVERSION Vice", "value": 0},
+      {"Keywords": "SANCTITY/DEGRADATION Virtue", "value": 6},
+      {"Keywords": "SANCTITY/DEGRADATION Vice", "value": 0}
+    ]
+  },
+  "mark": "arc",
+  "encoding": {
+    "theta": {"field": "value", "type": "quantitative","stack": true},
+    "color": {
+      "field": "Keywords", "type": "nominal",
+      "scale": {"range": ["#a6cee3", "#1f78b4", "#fdbf6f", "#ff7f00", "#b2df8a", "#33a02c", "#fb9a99", "#e31a1c", "#cab2d6", "#6a3d9a"]},
+      "sort":["CARE/HARM Virtue", "CARE/HARM Vice","FAIRNESS/CHEATING Virtue","FAIRNESS/CHEATING Vice","LOYALTY/BETRAYAL Virtue", "LOYALTY/BETRAYAL Vice", "AUTHORITY/SUBVERSION Virtue", "AUTHORITY/SUBVERSION Vice", "SANCTITY/DEGRADATION Virtue", "SANCTITY/DEGRADATION Vice"]
+    },
+    "order": {"field": "vKeywordsalue", "type": "nominal", "sort": "descending"}
+  },
+  "view": {"stroke": null}
+}

@@ -1,0 +1,1877 @@
+<html>
+
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Comfortaa" />
+    <style type="text/css">
+        /* Three image containers (use 25% for four, and 50% for two, etc) */
+
+        .column {
+            float: left;
+            width: 50%;
+            padding: 20px 0px 0px 50px;
+        }
+
+        @media screen and (max-width: 500px) {
+            .column {
+                width: 100%;
+            }
+        }
+
+        /* Clear floats after image containers */
+
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .buttons {
+            border-radius: 4px;
+            display: inline-block;
+            cursor: pointer;
+            font-family: Arial;
+            font-size: 13px;
+            font-weight: bold;
+            padding: 6px 15px;
+            text-decoration: none;
+            text-shadow: 0px 1px 0px #5b8a3c;
+            margin-left: 6px;
+            width: 100px;
+        }
+
+        .aibtn {
+            border-radius: 4px;
+            color: #ffffff;
+            display: inline-block;
+            cursor: pointer;
+            font-family: Arial;
+            font-size: 13px;
+            font-weight: bold;
+            padding: 6px 15px;
+            text-decoration: none;
+            width: 200px;
+            border: solid 5px #000;
+            border-width: 0 4px 5px 0;
+            border-radius: 5px;
+            background: linear-gradient(to bottom, #f8df20 5%, #f8df20 100%);
+            border-color: transparent #f5e77a #d3bc0d transparent;
+            color: #000000;
+            background-color: #2b638f;
+            background-clip: padding-box;
+        }
+
+        #inter_btn {
+            color: #000;
+            background: linear-gradient(to bottom, #ffffff 5%, #ffffff 100%);
+            background-color: #ffffff;
+            border: solid 5px #000;
+            border-width: 1px 4px 5px 1px;
+            border-radius: 5px;
+            border-color: #000 #000 #000 #000;
+            background-clip: padding-box;
+        }
+
+        #next_btn {
+            color: #ffffff;
+            background: linear-gradient(to bottom, #1681b3 5%, #1681b3 100%);
+            background-color: #2197ce;
+            border: solid 5px #000;
+            border-width: 1px 4px 5px 1px;
+            border-radius: 5px;
+            border-color: #3b71ac #5184b6 #3b71ac #3b71ac;
+            background-clip: padding-box;
+        }
+
+        #btn1 {
+            color: #000000;
+            font-weight: 900;
+            text-shadow: 0px 0px #000000;
+            background: linear-gradient(to bottom, #e2e2e2 5%, #e2e2e2 100%);
+            background-color: #28A745;
+            border: solid 5px #000;
+            border-width: 0 4px 5px 0;
+            border-radius: 5px;
+            border-color: transparent #959595 #696969 transparent;
+            background-clip: padding-box;
+        }
+
+        #btn2 {
+            color: #ffffff;
+            font-weight: 900;
+            text-shadow: 0px 0px #000000;
+            background-color: #959595;
+            border: solid 5px #000;
+            border-width: 0 4px 5px 0;
+            border-radius: 5px;
+            border-color: transparent #aeaeae #f5f5f5 transparent;
+            background-clip: padding-box;
+        }
+
+        #btn3 {
+            color: #000000;
+            font-weight: 900;
+            text-shadow: 0px 0px #000000;
+            background-color: #2b638f;
+            border: solid 5px #000;
+            border-width: 0 4px 5px 0;
+            border-radius: 5px;
+            background: linear-gradient(to bottom, #f8df20 5%, #f8df20 100%);
+            border-color: transparent #f5e77a #d3bc0d transparent;
+        }
+
+        .buttons:active {
+            position: relative;
+            top: 1px;
+        }
+
+        .border {
+            border-width: 10px !important;
+        }
+
+        .dashedborder {
+            border-style: dashed !important;
+        }
+
+        .progress .bar {
+            -webkit-transition: none !important;
+            -moz-transition: none !important;
+            -ms-transition: none !important;
+            -o-transition: none !important;
+            transition: none !important;
+        }
+
+        .active_btn_pre {
+            background-color: #23ad35;
+            color: white;
+            padding: 1em;
+            text-decoration: none;
+        }
+
+        .active_btn_pre:hover:not(.active) {
+            background-color: #000000;
+            color: white;
+            padding: 1em;
+            text-decoration: none;
+        }
+
+        .inactive_btn_pre {
+            background-color: #566963;
+            color: rgb(163, 163, 163);
+            padding: 1em;
+            text-decoration: none;
+        }
+
+        .inactive_btn_pre_st {
+            background-color: #566963;
+            color: rgb(163, 163, 163);
+            padding: 1em;
+            text-decoration: none;
+        }
+
+        .active_btn_pre_st {
+            background-color: #000000;
+            color: white;
+            padding: 1em;
+            text-decoration: none;
+        }
+
+        .inactive_btn_pre:hover:not(.active) {
+            background-color: #566963;
+            color: rgb(163, 163, 163);
+            padding: 1em;
+            text-decoration: none;
+        }
+
+        .inactive_btn_pre_st:hover:not(.active) {
+            background-color: #566963;
+            color: rgb(163, 163, 163);
+            padding: 1em;
+            text-decoration: none;
+        }
+
+        .active_btn_pre_st:hover:not(.active) {
+            background-color: #000000;
+            color: white;
+            padding: 1em;
+            text-decoration: none;
+        }
+
+        .inactive_btn_pre_btn {
+            background-color: #566963;
+            color: rgb(163, 163, 163);
+            padding: 1em;
+            text-decoration: none;
+            text-shadow: 0px;
+            border: 0;
+            cursor: pointer;
+        }
+
+        .inactive_btn_pre_btn:hover:not(.active) {
+            background-color: #566963;
+            color: white;
+            padding: .3em;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .inactive_btn_pre_btn_st:hover:not(.active) {
+            background-color: #566963;
+            color: white;
+            padding: .3em;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 10px;
+            border-radius: 5px;
+            background: linear-gradient(to right, rgb(255, 255, 255), rgb(0, 0, 0));
+            ;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+
+        .slider:hover {
+            opacity: 1;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 5px;
+            height: 30px;
+            border: 0;
+            background: black;
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 5px;
+            height: 30px;
+            border: 0;
+            background: black;
+            cursor: pointer;
+        }
+
+        #logo-text {
+            margin-top: -40px;
+            margin-bottom: 25px;
+            font-family: Comfortaa;
+            font-size: 36px;
+        }
+
+        p>br {
+            content: "";
+            margin: 1em;
+            display: block;
+            font-size: 1%;
+        }
+
+        .tooltip-inner {
+            text-align: left;
+            max-width: 350px;
+            /* If max-width does not work, try using width instead */
+            width: 350px; 
+        }
+
+    </style>
+
+    <script language='Javascript'>
+        function genRandonString(length) {
+            var chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            var charLength = chars.length;
+            var result = '';
+            for ( var i = 0; i < length; i++ ) {
+                result += chars.charAt(Math.floor(Math.random() * charLength));
+            }
+            return result;
+        }
+
+        var not_started = true;
+        var qualtrics_id_1 = genRandonString(5);
+        $('#id_unq').html('Your id is ' + qualtrics_id_1);
+        var qualtrics_id_2 = '';
+        var first_survey = false,
+            qual_id_btn = false;
+        var remaining_ids = [];
+        var base_attn_url = 'https://difftask.s3.amazonaws.com/combined_attns/';
+
+        function loadFile(filePath) {
+            var result = null;
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("GET", filePath, false);
+            xmlhttp.send();
+            if (xmlhttp.status == 200) {
+                result = xmlhttp.responseText;
+            }
+            return result;
+        }
+
+        function start_btn_event() {
+            // check if extension is enabled
+            // if (!qual_id_btn)
+            //    return false;
+
+            if (can_continue == false) {
+                //alert('Please enable the "Allow CORS" extention and refresh the page');
+                return;
+            }
+
+            // save both blocks -> EDIT ME
+            var filenames = loadFile("https://difftask.s3.amazonaws.com/far_images_w_true.txt").split('\n');
+            var near_filenames = loadFile("https://difftask.s3.amazonaws.com/near_images.txt").split('\n');
+
+            for (var i = 0; i < 3; i++) {
+                if (filenames[i] != '')
+                    files.push(filenames[i].split(', '));
+            }
+
+            for (var i = 0; i < near_filenames.length; i++) {
+                if (near_filenames[i] != '')
+                    near_files.push(near_filenames[i].split(', '));
+            }
+
+            // set conditions for the next batch
+            mid_ind = 10000;
+            for (let i = 1; i < files.length; i++) {
+                remaining_ids.push(i);
+            }
+
+            current_pair_ind = 0;
+            //document.getElementById('start_btn').style.visibility = 'hidden';
+            //document.getElementById('qualid').style.visibility = 'hidden';
+            
+            //document.getElementById('textq').style.visibility = 'hidden';
+            //document.getElementById('textmturk').style.visibility = 'hidden';
+            not_started = false;
+            document.getElementById('survey_form').style.visibility = 'visible';
+            document.getElementById('top_pad').style.visibility = 'hidden';
+            document.getElementById('start_text1').style.visibility = 'hidden';
+            document.getElementById('start_text2').style.visibility = 'hidden';
+            //document.getElementById('start_btn').remove();
+            //document.getElementById('slide').remove();
+            document.getElementById('top_pad').style.paddingTop = '0px';
+            return false;
+        }
+
+        function get_qual_id() {
+            if (!first_survey)
+                return false;
+            qualtrics_id_1 = document.getElementById('qualid').value;
+            if (qualtrics_id_1 != '' && !isNaN(qualtrics_id_1) && qualtrics_id_1.indexOf('.') == -1) {
+                $('#start_btn').removeClass('inactive_btn_pre_st').addClass('active_btn_pre_st');
+                qual_id_btn = true;
+            } else {
+                alert('Please enter your provided Qualtrics ID!');
+            }
+
+            return false;
+        }
+
+        function get_qual_id_2() {
+            if (!first_survey)
+                return false;
+            qualtrics_id_2 = document.getElementById('qualid').value;
+            if (qualtrics_id_2 != '' && !isNaN(qualtrics_id_2) && qualtrics_id_2.indexOf('.') == -1) {
+                $('#start_btn').removeClass('inactive_btn_pre').addClass('active_btn_pre');
+                $('#start_btn').click(function () {
+                    submit_survey();
+                    return false;
+                });
+                qual_id_btn = true;
+            } else {
+                alert('Please enter your provided Qualtrics ID!');
+            }
+
+            return false;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="my_survey">
+        <div class="container" id="top_container">
+            <div id='top_pad' class='row align-center mx-auto d-block' style="padding-top: 50;">
+                <div class="form-group col-xs-4">
+                    <strong id="start_text1" class="" href=""
+                        style="margin-left: 400px;">Please install "Allow CORS: Access-Control-Allow-Origin":
+                    <ul style="margin-left: 400px;">
+                        <li>For Chrome browser: <a target="_blank" href="https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en">Extension Link</a></li>
+                        <li>For Firefox browser: <a target="_blank" href="https://addons.mozilla.org/en-US/firefox/addon/access-control-allow-origin/">Extension Link</a></li>
+                    </ul><br></strong>
+                    <strong id="start_text2" class="" href=""
+                        style="margin-left: 400px;">By enabling the extension, the survey will start.</strong>
+                </div>
+
+
+            </div>
+
+        </div>
+        <div id="survey_form" style="visibility: hidden; margin-top: -90px;">
+            <!-- HTML to handle creating the HIT form -->
+            <form name='mturk_form' method='post' id='mturk_form'
+                action='https://analog-height-296717.uc.r.appspot.com/record_prolific_results'>
+                <input type='hidden' value='' name='assignmentId' id='assignmentId' />
+                <!-- This is where you define your question(s) -->
+
+                <div class="container" id="images">
+                    <div class="row d-flex justify-content-center text-center align-center" id="logo"
+                        style="margin-top: -20px;">
+                        <h2 id="logo-text">Facewise</h2><br><h4 id="id_unq"></h4>
+                    </div>
+                    <div class="row" style="border:#000; border-style: solid; padding: 50px;">
+                        <div class="col" style="border:#000; border-style: solid; height: 800px;">
+
+                            <div class="row" style="margin-top: 20px;">
+                                <!-- images row -->
+
+                                <div class="col float-right">
+                                    <p style="padding-left: 100px;">ID Photo</p>
+                                    <img id="img1" src="" alt="img1" style="width:200px;height:200px;"
+                                        class="float-right">
+                                    <div id="verify_text"
+                                        style="position: absolute; bottom: 8px; left: 70px; font-family:tahoma,garamond,serif;font-size:18px; color: white;"
+                                        data-bs-placement="bottom" data-bs-toggle="tooltip" title="If a red crossmark is present on the photo image, click the “Needs Additional Screening” button. The system automatically checks the authenticity of a travel document and assigns a checkmark or a crossmark. If a checkmark (green circle) is present, the ID is valid. However, if a crossmark (red circle) is present, additional screening is required. To detect authenticity, a secondary model was trained, tested, and validated on proprietary datasets of anomalous and non-anomalous travel documents, digitally altered and original images. A separate model further performs character recognition to analyze expiration dates on travel documents.">
+                                    </div>
+                                </div>
+
+                                <div class="col float-left">
+                                    <p style="padding-left: 70px;">Live Photo</p>
+                                    <img id="img2" src="" alt="img2" style="width:200px;height:200px;">
+                                </div>
+                            </div>
+
+                            <div class="row text-center d-flex justify-content-center" id='row1'
+                                style="margin-top: 35px;">
+                                <div class="col d-flex justify-content-center">
+                                    <div style="font-family:tahoma,garamond,serif;font-size:22px;"><b id='main_text'>Are
+                                            these the same person?</b></div>
+                                </div>
+                            </div>
+
+                            <div id="view_details_range" class="row d-flex justify-content-center"
+                                style="margin-top: 30px;">
+                                <div class="col d-flex justify-content-center">
+                                    <input type="range" class="slider" min="0" max="100" step="0.1" id="ai_confidence"
+                                        style="width: 400px;" disabled>
+                                </div>
+                            </div>
+
+                            <div id="view_details_range" class="row d-flex justify-content-center"
+                                style="margin-top: 30px;">
+                                <div class="col d-flex justify-content-center">
+                                    <label id="details_conf">The AI is 80% sure of its recommendation.</label>
+                                </div>
+                            </div>
+
+                            <div id="view_details_btn" class="row d-flex justify-content-center"
+                                style="margin-top: 30px;">
+                                <div class="col d-flex justify-content-center">
+                                    <button class="buttons" id="details_btn" type="button" onclick=""
+                                        style="font-size:18px; width: 400px; height: 50px;">View details >></button>
+                                </div>
+                            </div>
+
+                            <div id="inter" class="row d-flex justify-content-center"
+                                style="margin-top: 30px;  margin-bottom: -65px;">
+                                <div class="col d-flex justify-content-center">
+                                    <button class="buttons" id="next_btn" type="button" onclick=""
+                                        style="font-size:17px; width: 150px; height: 80px; margin-right: 70px;">Agree,
+                                        Next</button>
+                                    <button class="buttons" id="inter_btn" type="button" onclick=""
+                                        style="font-size:17px; width: 150px; height: 80px;">Disagree, Intervene</button>
+                                </div>
+                            </div>
+
+
+
+                            <div class="row d-flex justify-content-center" id="btns-row" style="margin-top: 100px;">
+                                <div class="col d-flex justify-content-center">
+                                    <div id="btns_div" class="align-self-center">
+                                        <button class="buttons" id="btn1" type="button" onclick=""
+                                            style="font-size:18px; width: 150px; height: 80px; margin-right: 30px;">Same</button>
+                                        <button class="buttons" id="btn2" type="button" onclick=""
+                                            style="font-size:18px; width: 150px; height: 80px;">Different</button>
+                                        <!-- <button class="buttons" id="btn3" type="button" onclick="">Unsure</button> -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="additional_screening" class="row d-flex justify-content-center">
+                                <div class="col d-flex justify-content-center">
+                                    <button class="buttons" id="additional_screening_btn" type="button" onclick=""
+                                        style="font-size:13px; width: 150px; height: 60px; margin-top: -70px; margin-left: 230px;" data-toggle="tooltip" data-placement="top" title="If there is a red crossmark on the photo image, click this button">Needs
+                                        Additional Screening</button>
+                                        
+                                </div>
+                            </div>
+
+                            <div class="row justify-content-center"
+                                style="margin-top: -170px; height: 200px; z-index: -1;">
+                                <b class="align-self-center" id="final-dec"
+                                    style="font-family:tahoma,garamond,serif;font-size:30px;"></b>
+                            </div>
+                            <div class="row justify-content-center"
+                                style="margin-top: -140px; height: 200px; z-index: -1;">
+                                <b class="align-self-center" id="ground-truth"
+                                    style="font-family:tahoma,garamond,serif;font-size:30px;"></b>
+                            </div>
+                            <div class="row justify-content-center"
+                                style="margin-top: -140px; height: 200px; z-index: -1;">
+                                <b class="align-self-center" id="ai-truth"
+                                    style="font-family:tahoma,garamond,serif;font-size:30px;"></b>
+                            </div>
+
+                        </div>
+
+                        <div class="col" id="extra_col_no_show" style="margin-left: 15px; margin-top: 10px; overflow-y: auto; height: 780px;">
+                            <div class="row d-flex justify-content-center align-center" style="margin-top: 0px; ">
+                                <ul>
+                                    <li>
+                                        These are the parts of faces that the AI used to make its recommendation:
+                                        <div class="row d-flex justify-content-center text-center align-center" style="margin-top: 0px;">
+                                        <!-- placeholders for the attentions -->
+                                        <div class="col" id="details_col_1">
+                                            <img id="attn1" src="" alt="img1" style="height:200px;" class="float-center">
+                                        </div>
+
+                                    </div>
+                                    </li>
+                                    <li id="ai_similarity" style="margin-top:25px;">
+                                        To calculate the confidence level, AI chooses the highest probability among predicted labels for dis-similarity, and similarity.
+                                        <div class="row">
+                                            <div class="col-6">- Calculated Similarity: </div>
+                                            <div class="col" id="calc_sim">
+
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">- Calculated Dissimilarity: </div>
+                                            <div class="col" id="calc_dissim">
+
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+
+                            
+
+                            <div class="row d-flex justify-content-center align-center" style="margin-top: 15px;">
+                                <ul>
+                                    <li id="li-p1">
+                                        <p>This face recognition system has been trained, tested, and validated on 100M+ photos of 500,000 unique individuals collected from publicly available databases such as VGGFace2, Multi-PIE, and others. A breakdown of the estimated race, gender, and age of the unique individuals in the database is presented here: </p>
+                                    
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-7">Your agreement with AI: </div>
+                                            <div class="col" id="ai_agreement_progressbar">
+
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-7">AI overall accuracy: </div>
+                                            <div class="col">
+                                                <div class="progress" style="margin-top: 6px;">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="73"
+                                                        aria-valuemin="0" aria-valuemax="100" style="width:73%">
+                                                        73%
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-7">AI Race = White Accuracy: </div>
+                                            <div class="col">
+                                                <div class="progress" style="margin-top: 6px;">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="80"
+                                                        aria-valuemin="0" aria-valuemax="100" style="width:80%">
+                                                        80%
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-7">AI Race = non-white Accuracy: </div>
+                                            <div class="col">
+                                                <div class="progress" style="margin-top: 6px;">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                                                        aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                                                        70%
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-7">AI Gender = Female Accuracy: </div>
+                                            <div class="col">
+                                                <div class="progress" style="margin-top: 6px;">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="75"
+                                                        aria-valuemin="0" aria-valuemax="100" style="width:75%">
+                                                        75%
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-7">AI Gender = Male Accuracy: </div>
+                                            <div class="col">
+                                                <div class="progress" style="margin-top: 6px;">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="82"
+                                                        aria-valuemin="0" aria-valuemax="100" style="width:82%">
+                                                        82%
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li id="li-p2" style="margin-top: 25px;">
+                                        <p>The AI's confidence level is calculated in this manner: first, a metric that signifies the mathematical distance between two image pairs is calculated. Then, the difference between the mathematical distance and a pre-determined (computed during the training and validation stages) threshold is calculated. Finally, the difference is normalized by a factor and the confidence level is calculated using probability measures associated with the standard normal distribution. Thus, the AI's confidence is an indication, based on the predetermined threshold. Confidence levels closer to 100% indicate higher confidence. </p>
+                                    </li>
+                                    <li id="li-p3" style="margin-top: 25px;">
+                                       <p>The similarity and dissimilarities are directly derived from the AI's confidence level i.e.,  the higher of the two probabilities is the AI's confidence level. See explanation of the AI's confidence level for more information about its calculation. Both probabilities are calculated using the scaled difference between the distance metric and the threshold. The calculation of the similarity and dissimilarity probability is based on the assumption that the threshold is distributed as standard normal and the scaled differences are realizations of a noise-generating process.</p>
+
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <!-- <div class="row text-center d-flex justify-content-center" id='row1'
+                                style="margin-top: 35px;">
+
+                                <div class="col" id="details_col_2">
+                                    <div style="font-family:tahoma,garamond,serif;font-size:20px;"><b
+                                            id='extra_text'>These are the parts of the face and the analysis</br>that
+                                            the AI used to make its recommendation.</b></div>
+                                </div>
+                            </div> -->
+
+                            <!-- indicator -->
+                            <!-- <div id="view_details_range" class="row d-flex justify-content-center"
+                                style="margin-top: 30px;">
+                                <div class="col" id="padding_div_1" style="margin-bottom: -80px;">
+                                    <div class="row" style="border:rgb(0, 0, 0); border-style: solid; outline-offset: -10px;">
+                                        <div class="col">
+                                            <p style="text-align: center;" data-toggle="tooltip" title="INFO HERE 1" data-placement="bottom"><strong style="font-size: 36px;"
+                                                    id="agree_percent"></strong></br>Your agreement</br>with AI</p>
+                                        </div>
+                                        <div class="col">
+                                            <p style="text-align: center;" data-toggle="tooltip" title="INFO HERE 2" data-placement="bottom"><strong
+                                                    style="font-size: 36px;">93%</strong></br>AI accuracy</br>rating</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div> -->
+
+                            <div id="view_details_range" class="row d-flex justify-content-center"
+                                style="margin-top: 30px;">
+                                <div class="col" id="padding_div_4">
+                                </div>
+                            </div>
+
+                            <!-- view details btn -->
+                            <div id="view_details_btn" class="row d-flex justify-content-center"
+                                style="margin-top: 30px;">
+                                <div class="col" id="padding_div_2">
+                                </div>
+                            </div>
+
+                            <div id="inter" class="row d-flex justify-content-center"
+                                style="margin-top: 30px;  margin-bottom: -65px;">
+                                <div class="col" id="padding_div_3">
+                                </div>
+                            </div>
+
+                            <div class="row d-flex justify-content-center" id="btns-row" style="margin-top: 30px;">
+                                <div class="col" id="padding_div_5">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <input type="submit" id="submitButton" name="commit" value="Complete HIT" style="visibility: hidden;" />
+            </form>
+        </div>
+
+        <div class="modal fade" id="error_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Uncertainty Alert!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                    <div class="modal-body">
+                        <strong>
+                        This pair has a low AI confidence. Please confirm your final decision.</strong>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="additional_screening_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">System Confirmation!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                    <div class="modal-body">
+                        <strong>
+                            This pair has been sent for additional screening.</strong>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="danger_pair_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">System Alert!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                    <div class="modal-body">
+                        <strong>
+                            ID photo may have been digitally altered or may be invalid or expired!</strong>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script language='javascript'>
+        jQuery.fn.visibilityToggle = function () {
+            return this.css('visibility', function (i, visibility) {
+                return (visibility == 'visible') ? 'hidden' : 'visible';
+            });
+        }
+
+        !(function ($) {
+            var toggle = $.fn.toggle;
+            $.fn.toggle = function () {
+                var args = $.makeArray(arguments),
+                    lastArg = args.pop();
+
+                if (lastArg == 'visibility') {
+                    return this.visibilityToggle();
+                }
+
+                return toggle.apply(this, arguments);
+            };
+        })(jQuery);
+
+        function show_more(dots_id, more_id, mybtn_id) {
+            var dots = document.getElementById(dots_id);
+            var moreText = document.getElementById(more_id);
+            var btnText = document.getElementById(mybtn_id);
+
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "Read more"; 
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "Read less"; 
+                moreText.style.display = "inline";
+            }
+        }
+
+        //When the page has loaded.
+        var current_time = 5;
+        var time_limit = 5000000 * 30; // 60 * 30;
+        var total_time = 0;
+        var clicked = false;
+        var aipair = false;
+        document.getElementById('survey_form').style.visibility = 'hidden';
+        var files = [];
+        var near_files = [];
+        var can_continue = false;
+        var filenames;
+        var next_clicked = false;
+        var saved_container = '';
+        var mid_ind = -1;
+        var ai_agreement = 0;
+        var total_shown = 0;
+        var total_agree = 0;
+        var qualtrics_mid = '<label for="qualid" id="textmturk" style="margin-top: 50px;"><strong>Step 3:</strong> Thanks for completing the survey, your code is: </br>' + qualtrics_id_1 + '</br></br></br>click on complete:</br></br></br></br><button id="finish_btn" class="active_btn_pre" onclick="submit_survey()" href="" style="padding-left: 59.745px; padding-right:59.745px; margin-top:200px;">Submit Survey</button></div>'
+
+        var timer_ext = setInterval(function () {
+            try {
+                filenames = loadFile("https://samples4project.s3.us-east-2.amazonaws.com/pairs.txt").split('\n');
+                clearInterval(timer_ext);
+                can_continue = true;
+                start_btn_event();
+            } catch (err) {
+                // pass
+            }
+        }, 500);
+
+        function arrayRemove(arr, value) {
+            return arr.filter(function (ele) {
+                return ele != value;
+            });
+        }
+
+        // test the new condition
+        var probs = Array(0.0, 1.0, 0.5, 0.75, 0.25);
+        var decisions = Array('Same', 'Different', 'Unsure');
+        var current_condition = 1; // Math.floor(Math.random() * 2);
+        var soft_prob = probs[2];
+        // document.getElementById('start_btn').style.visibility = 'visible';
+        var current_pair_ind;
+        var user_result = {}
+        var last_btns_click = -1;
+        var danger_pair = false;
+        var set_additional_screening = false;
+        var used_additional = false;
+
+        // disable decision buttons
+        hide_buttons();
+
+        // set button events
+        document.getElementById("details_btn").onclick = function () {
+            show_details();
+        }
+
+        document.getElementById('additional_screening_btn').onclick = function() {
+            $(document).on('hide.bs.modal','#additional_screening_modal', function () {
+                // goto next pair
+                used_additional = true;
+                set_additional_screening = true;
+                go_next();
+                set_additional_screening = false;
+            });
+            $('#additional_screening_modal').modal('show');
+        }
+
+        document.getElementById("btn1").onclick = function () {
+            if (add_user_response(1)) {
+                if (!decision_changed) {
+                    let rand_date = randomDate(new Date(2023, 8, 1), new Date(2028, 8, 1));
+                    while(rand_date.getDay() == 0 || rand_date.getMonth() == 0)
+                        rand_date = randomDate(new Date(2023, 6, 1), new Date(2028, 8, 1));
+
+                    let pair_name = near_files[current_pair_ind][0].split('/')[4];
+                    if(parseInt(pair_name) == 3 || parseInt(pair_name) == 40 || parseInt(pair_name) == 79) {
+                        let rand_date = randomDate(new Date(2021, 7, 1), new Date(2022, 7, 1));
+                        while(rand_date.getDay() == 0 || rand_date.getMonth() == 0)
+                            rand_date = randomDate(new Date(2021, 7, 1), new Date(2022, 7, 1));
+                        $('#verify_text').html(`❌ ${rand_date.getMonth()}/${rand_date.getDay()}/${rand_date.getFullYear()}`);
+                        danger_pair = true;
+
+                        // show danger alert
+                        if (danger_pair) {
+                            // diaplay modal
+                            $(document).on('hide.bs.modal','#danger_pair_modal', function () {
+                                // goto next pair
+                                //go_next();
+                            });
+                            $('#danger_pair_modal').modal('show');
+                            danger_pair = false;
+                        }
+                    }
+                    else {
+                        $('#verify_text').html(`✅ ${rand_date.getMonth()}/${rand_date.getDay()}/${rand_date.getFullYear()}`);
+                        danger_pair = false;
+                    }
+
+                    $("#img1").attr("src", near_files[current_pair_ind][0]);
+                    $("#img2").attr("src", near_files[current_pair_ind][1]);
+                    if ($('#inter').css('margin-top') == '-50px') {
+                        $('#inter').css('margin-top', '50px');
+                    }
+
+                    if ((files[current_pair_ind][4] == 'S' && parseInt(near_files[current_pair_ind][2]) == 0) || (files[current_pair_ind][4] == 'D' && parseInt(near_files[current_pair_ind][2]) == 1)) {
+                        similar_result = true;
+                    } else {
+                        similar_result = false;
+                    }
+
+                    
+
+                    if (similar_result == true) {
+                        $('#details_conf').html('AI Confidence = ' + parseInt(near_files[current_pair_ind][3] * 100) + '%');
+
+                        if (parseInt(near_files[current_pair_ind][2]) == 0 && parseInt(near_files[current_pair_ind][3] * 100) <= 30) {
+                            $('#error_modal').modal('show');
+                        }
+                    } else {
+                        $('#details_conf').html('AI Confidence = ' + parseInt(101 - near_files[current_pair_ind][3] * 100) + '%');
+                        if (parseInt(near_files[current_pair_ind][2]) == 0 && parseInt(101 - near_files[current_pair_ind][3] * 100) <= 30) {
+                            $('#error_modal').modal('show');
+                        }
+                    }
+                }
+                hide_buttons();
+            }
+        };
+        document.getElementById("btn2").onclick = function () {
+            if (add_user_response(2)) {
+                if (!decision_changed) {
+                    let rand_date = randomDate(new Date(2023, 6, 1), new Date(2028, 8, 1));
+                    while(rand_date.getDay() == 0 || rand_date.getMonth() == 0)
+                        rand_date = randomDate(new Date(2023, 6, 1), new Date(2028, 8, 1));
+
+                    let pair_name = near_files[current_pair_ind][0].split('/')[4];
+                    if(parseInt(pair_name) == 3 || parseInt(pair_name) == 40 || parseInt(pair_name) == 79) {
+                        let rand_date = randomDate(new Date(2021, 7, 1), new Date(2022, 7, 1));
+                        while(rand_date.getDay() == 0 || rand_date.getMonth() == 0)
+                            rand_date = randomDate(new Date(2021, 7, 1), new Date(2022, 7, 1));
+                        $('#verify_text').html(`❌ ${rand_date.getMonth()}/${rand_date.getDay()}/${rand_date.getFullYear()}`);
+                        danger_pair = true;
+
+                        // show danger alert
+                        if (danger_pair) {
+                            // diaplay modal
+                            $(document).on('hide.bs.modal','#danger_pair_modal', function () {
+                                // goto next pair
+                                //go_next();
+                            });
+                            $('#danger_pair_modal').modal('show');
+                            danger_pair = false;
+                        }
+                    }
+                    else {
+                        $('#verify_text').html(`✅ ${rand_date.getMonth()}/${rand_date.getDay()}/${rand_date.getFullYear()}`);
+                        danger_pair = false;
+                    }
+
+                    $("#img1").attr("src", near_files[current_pair_ind][0]);
+                    $("#img2").attr("src", near_files[current_pair_ind][1]);
+                    if ($('#inter').css('margin-top') == '-50px') {
+                        $('#inter').css('margin-top', '50px');
+                    }
+
+                    if ((files[current_pair_ind][4] == 'S' && parseInt(near_files[current_pair_ind][2]) == 0) || (files[current_pair_ind][4] == 'D' && parseInt(near_files[current_pair_ind][2]) == 1)) {
+                        similar_result = true;
+                    } else {
+                        similar_result = false;
+                    }
+
+                    
+
+                    if (similar_result == true) {
+                        $('#details_conf').html('AI Confidence = ' + parseInt(near_files[current_pair_ind][3] * 100) + '%');
+                        
+                        if (parseInt(near_files[current_pair_ind][2]) == 1 && parseInt(near_files[current_pair_ind][3] * 100) <= 30) {
+                            $('#error_modal').modal('show');
+                        }
+                    } else {
+                        $('#details_conf').html('AI Confidence = ' + parseInt(101 - near_files[current_pair_ind][3] * 100) + '%');
+                        if (parseInt(near_files[current_pair_ind][2]) == 1 && parseInt(101 - near_files[current_pair_ind][3] * 100) <= 30) {
+                            $('#error_modal').modal('show');
+                        }
+                    }
+                }
+                hide_buttons();
+            }
+        };
+        // document.getElementById("btn3").onclick = function () {if(add_user_response(3)) hide_buttons();};
+        document.getElementById("inter_btn").onclick = function () {
+            intervene();
+        };
+        document.getElementById("next_btn").onclick = function () {
+            go_next();
+        };
+
+        // create the time here
+        current_time = 0;
+        var wait_flag = 0;
+        var switched = false;
+        var show_final_dec = false;
+        var user_decided = false;
+        var clicked_count = 0;
+        var s_time, c_time, e_time;
+        var condition = 0;
+        var show_case;
+        var decision_changed = false;
+        var resumed = false;
+        var showing_details = false;
+        var similar_result = false;
+        var current_page_idx = 0;
+        var used_details = false;
+
+        // $('#details_col_1').hide();
+        document.getElementById('details_col_1').style.visibility = 'hidden';
+        //document.getElementById('details_col_2').style.visibility = 'hidden';
+        //document.getElementById('padding_div_1').style.visibility = 'hidden';
+        document.getElementById('padding_div_2').style.visibility = 'hidden';
+        document.getElementById('padding_div_3').style.visibility = 'hidden';
+        document.getElementById('padding_div_4').style.visibility = 'hidden';
+        document.getElementById('padding_div_5').style.visibility = 'hidden';
+        document.getElementById('extra_col_no_show').style.visibility = 'hidden';
+        $('#additional_screening_btn').hide();
+        $('#additional_screening').hide();
+
+
+
+
+        // $('#details_col_2').hide();
+        // $('#details_btn').hide();
+        // $('#ai_confidence').hide();
+        //$('#extra_details').hide();
+        //$('#padding_div_1').hide();
+        //$('#padding_div_2').hide();
+        //$('#padding_div_3').hide();
+        //$('#padding_div_4').hide();
+        //$('#padding_div_5').hide();
+        $('#details_conf').hide();
+        $('#details_btn').hide();
+        // $('#extra_col_no_show').hide();
+
+        var timer = setInterval(survey_logic, 1000);
+
+        function survey_logic() {
+            if (not_started == false) {
+                current_time -= 1;
+                total_time += 1;
+
+                if (total_time >= time_limit || current_pair_ind == files.length) {
+                    document.getElementById('my_survey').style.background = '#ffffff';
+                    stop_survey();
+                }
+
+                if (!resumed && current_time < 0 && show_final_dec && show_case == 1 && !decision_changed) {
+                    // document.getElementById('row1').style.visibility = 'hidden';
+                    document.getElementById('inter').style.visibility = 'hidden';
+                    document.getElementById('btns-row').style.visibility = 'hidden';
+
+                    clicked = false;
+                    aipair = false;
+                    next_clicked = false;
+
+                    document.getElementById('inter').style.visibility = 'visible';
+                    // change the button's text
+                    document.getElementById('inter_btn').innerHTML = 'Change my decision';
+                    document.getElementById('next_btn').innerHTML = 'Proceed with my decision';
+
+
+                    // change the displayed text here
+                    f1 = near_files[current_pair_ind][2];
+
+                    remove_past_borders();
+
+                    if (f1 == 0) {
+                        if (last_btns_click == 1) {
+                            document.getElementById('main_text').innerHTML = 'Your Decision: ' + '<span style="color: green;">Same</span>' + '<br> AI Decision: <span style="color: green;">Same</span>';
+                            //document.getElementById("img1").classList.add('border');
+                            //document.getElementById("img2").classList.add('border');
+                            //document.getElementById("img1").classList.add('border-success');
+                            //document.getElementById("img2").classList.add('border-success');
+                        } else if (last_btns_click == 2) {
+                            document.getElementById('main_text').innerHTML = 'Your Decision: ' + '<span style="color: red;">Different</span>' + '<br> AI Decision: <span style="color: green;">Same</span>';
+                            //document.getElementById("img1").classList.add('border');
+                            //document.getElementById("img2").classList.add('border');
+                            //document.getElementById("img1").classList.add('border-success');
+                            //document.getElementById("img2").classList.add('border-success');
+                        }
+
+                    } else {
+                        if (last_btns_click == 1) {
+                            document.getElementById('main_text').innerHTML = 'Your Decision: ' + '<span style="color: green;">Same</span>' + '<br> AI Decision: <span style="color: red;">Different</span>';
+                            //document.getElementById("img1").classList.add('border');
+                            //document.getElementById("img2").classList.add('border');
+                            //document.getElementById("img1").classList.add('border-danger');
+                            //document.getElementById("img2").classList.add('border-danger');
+                        } else if (last_btns_click == 2) {
+                            document.getElementById('main_text').innerHTML = 'Your Decision: ' + '<span style="color: red;">Different</span>' + '<br> AI Decision: <span style="color: red;">Different</span>';
+                            //document.getElementById("img1").classList.add('border');
+                            //document.getElementById("img2").classList.add('border');
+                            //document.getElementById("img1").classList.add('border-danger');
+                            //document.getElementById("img2").classList.add('border-danger');
+                        }
+
+                    }
+
+                    // show deciding buttons
+                    current_time = 31 * 1000;
+                    // show_buttons();
+                    show_case = 2;
+                } else if (!resumed && ((current_time < 0 && show_final_dec && show_case == 2) || (decision_changed && current_time < 0))) {
+                    e_time = get_time();
+                    // show the final AI's decision: hide the rows and display a simple msg
+                    document.getElementById("img1").classList.remove('dashedborder');
+                    document.getElementById("img2").classList.remove('dashedborder');
+                    document.getElementById('final-dec').style.visibility = 'visible';
+                    if (condition != 3)
+                        document.getElementById('ground-truth').style.visibility = 'visible';
+                    else
+                        document.getElementById('ground-truth').style.visibility = 'hidden';
+                    // document.getElementById('row1').style.visibility = 'hidden';
+                    document.getElementById('inter').style.visibility = 'hidden';
+                    document.getElementById('btns-row').style.visibility = 'hidden';
+
+                    if (condition == 1) {
+                        // display AI's decision as well
+                        document.getElementById('ai-truth').style.visibility = 'visible';
+                    }
+
+                    remove_past_borders();
+
+                    // set the final decision
+                    f1 = document.getElementById('img1').getAttribute('src').split('/');
+                    f1 = f1[f1.length - 1].split('_')[1];
+                    f2 = document.getElementById('img2').getAttribute('src').split('/');
+                    f2 = f2[f2.length - 1].split('_')[1];
+                    $('#details_btn').hide();
+                    $('#additional_screening_btn').hide();
+                    $('#ai_confidence').hide();
+                    $('#details_conf').hide();
+
+                    document.getElementById('details_col_1').style.visibility = 'hidden';
+                    //document.getElementById('details_col_2').style.visibility = 'hidden';
+                    //document.getElementById('padding_div_1').style.visibility = 'hidden';
+                    document.getElementById('padding_div_2').style.visibility = 'hidden';
+                    document.getElementById('padding_div_3').style.visibility = 'hidden';
+                    document.getElementById('padding_div_4').style.visibility = 'hidden';
+                    document.getElementById('padding_div_5').style.visibility = 'hidden';
+                    document.getElementById('extra_col_no_show').style.visibility = 'hidden';
+
+                    // check agreement with the AI
+                    f1 = files[current_pair_ind][2];
+
+                    if (f1 == 0) {
+                        // ai thinks the same
+                        if (user_decided == 1) {
+                            // user -> same
+                            // update agreement
+                            total_shown += 1;
+                            total_agree += 1;
+                            ai_agreement = parseInt((total_agree / total_shown) * 100);
+                        } else {
+                            // user -> different
+                            total_shown += 1;
+                            ai_agreement = parseInt((total_agree / total_shown) * 100);
+                        }
+                    } else {
+                        // ai thinks they are different
+                        if (user_decided == 1) {
+                            // user -> same
+                            // update agreement
+                            total_shown += 1;
+                            ai_agreement = parseInt((total_agree / total_shown) * 100);
+                        } else {
+                            // user -> different
+                            // update agreement
+                            total_shown += 1;
+                            total_agree += 1;
+                            ai_agreement = parseInt((total_agree / total_shown) * 100);
+                        }
+                    }
+
+                    $('#main_text').hide();
+
+                    if (user_decided == 1) {
+                        // document.getElementById('final-dec').innerHTML = 'Confirmed decision = <span style="color: green;font-family:tahoma,garamond,serif;font-size:30px;">Same</span>';
+                        //document.getElementById("img1").classList.add('border');
+                        //document.getElementById("img2").classList.add('border');
+                        //document.getElementById("img1").classList.add('border-success');
+                        //document.getElementById("img2").classList.add('border-success');
+
+                    } else if (user_decided == 2) {
+                        // document.getElementById('final-dec').innerHTML = 'Confirmed decision = <span style="color: red;font-family:tahoma,garamond,serif;font-size:30px;">Different</span>';
+                        //document.getElementById("img1").classList.add('border');
+                        //document.getElementById("img2").classList.add('border');
+                        //document.getElementById("img1").classList.add('border-danger');
+                        //document.getElementById("img2").classList.add('border-danger');
+                    } else if (user_decided == 3) {
+                        // document.getElementById('final-dec').innerHTML = 'Confirmed decision = <span style="color: #f8df20;font-family:tahoma,garamond,serif;font-size:30px;">Unsure</span>';
+                        //document.getElementById("img1").classList.add('border');
+                        //document.getElementById("img2").classList.add('border');
+                        //document.getElementById("img1").classList.add('border-warning');
+                        //document.getElementById("img2").classList.add('border-warning');
+                    }
+
+                    // show the ground truth here
+                    /* if (f1 == f2 && condition != 3) {
+                        document.getElementById('ground-truth').innerHTML = 'Ground truth = <span style="color: green;font-family:tahoma,garamond,serif;font-size:40px;">Same</span>';
+                    } else if (condition != 3) {
+                        document.getElementById('ground-truth').innerHTML = 'Ground truth = <span style="color: red;font-family:tahoma,garamond,serif;font-size:40px;">Different</span>';
+                    } */
+
+                    // final decision timer
+                    // check the condition first (which type is currently showing!)
+                    current_time = 0;
+                    show_case = 1;
+                    show_final_dec = false;
+                    decision_changed = false;
+
+                    // save final AI decision also! 
+                    if (aipair && !clicked) {
+                        // record time
+                        var img1_path = document.getElementById('img1').getAttribute('src').split("/");
+                        var img2_path = document.getElementById('img2').getAttribute('src').split("/");
+                        img1_path = img1_path[img1_path.length - 1];
+                        img2_path = img2_path[img2_path.length - 1];
+
+                        // add to array
+                        user_result['pre|' + img1_path + ' ' + img2_path + condition.toString()] = user_decided + '|' + clicked + '|' + aipair + '|' + s_time + '|' + c_time + '|' + e_time + '|' + next_clicked + '|' + decision_changed + '|' + used_additional + '|' + used_details;
+                    }
+
+                    // change the current ind
+                    if (current_pair_ind >= 0) {
+                        if (remaining_ids.length == 0) {
+                            pause_survey();
+                        }
+                        rand_id = Math.floor(Math.random() * remaining_ids.length);
+                        current_pair_ind = remaining_ids[rand_id];
+                        remaining_ids = arrayRemove(remaining_ids, remaining_ids[rand_id]);
+                        used_additional = false;
+                        used_details = false;
+                    }
+                } else if (current_time < 0) {
+                    // if(current_pair_ind >= mid_ind && current_pair_ind >= 5 && !switched) {
+                    //    current_condition = 1 - current_condition;
+                    //    soft_prob = probs[current_condition];
+                    //    switched = true;
+                    // show the second qualtrics survey
+                    //    qual_id_btn = false;
+                    //    pause_survey();
+                    // }
+
+                    resumed = false;
+                    document.getElementById('final-dec').style.visibility = 'hidden';
+                    document.getElementById('ground-truth').style.visibility = 'hidden';
+                    document.getElementById('ai-truth').style.visibility = 'hidden';
+                    // document.getElementById('row1').style.visibility = 'visible';
+                    document.getElementById('inter').style.visibility = 'visible';
+                    document.getElementById('btns-row').style.visibility = 'visible';
+
+                    user_decided = false;
+                    wait_flag = false;
+                    show_final_dec = true;
+
+                    // goto next image or case here
+                    // check if the survey is finished
+
+                    // remove past borders
+                    remove_past_borders();
+
+                    // TODO: get a random chance for displaying AI or not
+                    if (current_condition == 1) {
+                        condition = 1;
+                        // display the third condition
+                        show_case = 1;
+                        
+                        $('#main_text').show();
+                        document.getElementById('main_text').innerHTML = 'Are these the same person?';
+                        // document.getElementById('my_survey').style.background = '#64A7B0';
+
+                        clicked = false;
+                        aipair = false;
+                        next_clicked = false;
+                        document.getElementById("img1").style.border = "";
+                        document.getElementById("img2").style.border = "";
+                        remove_past_borders();
+                        $("#img1").attr("src", files[current_pair_ind][0]);
+                        $("#img2").attr("src", files[current_pair_ind][1]);
+                        if ($('#inter').css('margin-top') == '-50px') {
+                            $('#inter').css('margin-top', '50px');
+                        }
+                        current_page_idx = 0;
+
+                        $("#attn1").attr("src", base_attn_url + files[current_pair_ind][0].split('/')[4] + '.png');
+                        $('#verify_text').html('');
+                        // 0 is same, 1 is different
+                        if ((files[current_pair_ind][4] == 'S' && parseInt(near_files[current_pair_ind][2]) == 0) || (files[current_pair_ind][4] == 'D' && parseInt(near_files[current_pair_ind][2]) == 1)) {
+                            similar_result = true;
+                        } else {
+                            similar_result = false;
+                        }
+
+                        if (similar_result == true) {
+                            $('#details_conf').html('AI Confidence = ' + parseInt(near_files[current_pair_ind][3] * 100) + '%');
+                            if (parseInt(near_files[current_pair_ind][3] * 100) <= 30) {
+                                //$('#error_modal').modal('show');
+                            }
+
+                        } else {
+                            $('#details_conf').html('AI Confidence = ' + parseInt(101 - near_files[current_pair_ind][3] * 100) + '%');
+                            if (parseInt(101 - near_files[current_pair_ind][3] * 100) <= 30) {
+                                //$('#error_modal').modal('show');
+                            }
+                        }
+
+                        // $('#ai_similarity').html(`To calculate the confidence level, AI chooses the highest probability among predicted labels for dis-similarity, and similarity.</br>Calculated Similarity: ${parseInt(files[current_pair_ind][3] * 100)}%</br>Calculated Dissimilarity: ${100 - parseInt(files[current_pair_ind][3] * 100)}%`);
+
+                        if (similar_result == true) {
+                            $('#calc_sim').html(`<div class="progress" style="margin-top: 6px;"><div class="progress-bar" role="progressbar" aria-valuenow="${parseInt(near_files[current_pair_ind][3] * 100)}"aria-valuemin="0" aria-valuemax="100" style="width:${parseInt(near_files[current_pair_ind][3] * 100)}%">${parseInt(near_files[current_pair_ind][3] * 100)}%</div></div>`);
+                            $('#calc_dissim').html(`<div class="progress" style="margin-top: 6px;"><div class="progress-bar" role="progressbar" aria-valuenow="${100 - parseInt(near_files[current_pair_ind][3] * 100)}"aria-valuemin="0" aria-valuemax="100" style="width:${100 - parseInt(near_files[current_pair_ind][3] * 100)}%">${100 - parseInt(near_files[current_pair_ind][3] * 100)}%</div></div>`);
+                        } else {
+                            $('#calc_sim').html(`<div class="progress" style="margin-top: 6px;"><div class="progress-bar" role="progressbar" aria-valuenow="${100 - parseInt(near_files[current_pair_ind][3] * 100)}"aria-valuemin="0" aria-valuemax="100" style="width:${100 - parseInt(near_files[current_pair_ind][3] * 100)}%">${100 - parseInt(near_files[current_pair_ind][3] * 100)}%</div></div>`);
+                            $('#calc_dissim').html(`<div class="progress" style="margin-top: 6px;"><div class="progress-bar" role="progressbar" aria-valuenow="${parseInt(near_files[current_pair_ind][3] * 100)}"aria-valuemin="0" aria-valuemax="100" style="width:${parseInt(near_files[current_pair_ind][3] * 100)}%">${parseInt(near_files[current_pair_ind][3] * 100)}%</div></div>`);
+                        }
+
+                        // update the confidence
+                        if (similar_result == true) {
+                            $('#ai_confidence').val(parseFloat(near_files[current_pair_ind][3]) * 100);
+                        } else {
+                            $('#ai_confidence').val((1.0 - parseFloat(near_files[current_pair_ind][3])) * 100);
+                        }
+                        // $('#agree_percent').html(ai_agreement.toString() + '%');
+
+                        $('#ai_agreement_progressbar').html(`<div class="progress" style="margin-top: 6px;"><div class="progress-bar" role="progressbar" aria-valuenow="${ai_agreement}"aria-valuemin="0" aria-valuemax="100" style="width:${ai_agreement}%">${ai_agreement}%</div></div>`);
+
+                        document.getElementById('inter').style.visibility = 'hidden';
+
+                        $('#details_btn').hide();
+                        $('#additional_screening_btn').hide();
+                        $('#ai_confidence').hide();
+                        $('#extra_details').hide();
+                        $('#details_conf').hide();
+
+                        document.getElementById('details_col_1').style.visibility = 'hidden';
+                        //document.getElementById('details_col_2').style.visibility = 'hidden';
+                        //document.getElementById('padding_div_1').style.visibility = 'hidden';
+                        document.getElementById('padding_div_2').style.visibility = 'hidden';
+                        document.getElementById('padding_div_3').style.visibility = 'hidden';
+                        document.getElementById('padding_div_4').style.visibility = 'hidden';
+                        document.getElementById('padding_div_5').style.visibility = 'hidden';
+                        document.getElementById('extra_col_no_show').style.visibility = 'hidden';
+
+                        $('#details_btn').html('View details >>');
+                        showing_details = false;
+
+                        // show deciding buttons
+                        current_time = 31 * 1000;
+                        // current_pair_ind = Math.floor((Math.random() * (filenames.length - 1)));
+                        show_buttons();
+                        // set s_time
+                        s_time = get_time();
+                        c_time = 'None';
+
+                    } else {
+                        condition = 3;
+                        show_case = 2;
+                        // Display AI pair
+
+                        aipair = true;
+                        clicked = false;
+                        next_clicked = false;
+                        $("#img1").attr("src", files[current_pair_ind][0]);
+                        $("#img2").attr("src", files[current_pair_ind][1]);
+                        if ($('#inter').css('margin-top') == '-50px') {
+                            $('#inter').css('margin-top', '50px');
+                        }
+                        current_page_idx = 0;
+                        $("#attn1").attr("src", base_attn_url + files[current_pair_ind][0].split('/')[4] + '.png');
+
+                        if ((files[current_pair_ind][4] == 'S' && parseInt(near_files[current_pair_ind][2]) == 0) || (files[current_pair_ind][4] == 'D' && parseInt(near_files[current_pair_ind][2]) == 1)) {
+                            similar_result = true;
+                        } else {
+                            similar_result = false;
+                        }
+
+                        // $('#ai_confidence').val(parseFloat(files[current_pair_ind][3]) * 100);
+                        if (similar_result == true) {
+                            $('#ai_confidence').val(parseFloat(near_files[current_pair_ind][3]) * 100);
+                        } else {
+                            $('#ai_confidence').val((1.0 - parseFloat(near_files[current_pair_ind][3])) * 100);
+                        }
+                        // $('#agree_percent').html(ai_agreement.toString() + '%');
+                        $('#ai_agreement_progressbar').html(`<div class="progress" style="margin-top: 6px;"><div class="progress-bar" role="progressbar" aria-valuenow="${ai_agreement}"aria-valuemin="0" aria-valuemax="100" style="width:${ai_agreement}%">${ai_agreement}%</div></div>`);
+
+                        if (similar_result == true) {
+                            $('#details_conf').html('AI Confidence = ' + parseInt(near_files[current_pair_ind][3] * 100) + '%');
+                            if (parseInt(near_files[current_pair_ind][3] * 100) <= 30) {
+                                //$('#error_modal').modal('show');
+                            }
+
+                        } else {
+                            $('#details_conf').html('AI Confidence = ' + parseInt(101 - near_files[current_pair_ind][3] * 100) + '%');
+                            if (parseInt(101 - near_files[current_pair_ind][3] * 100) <= 30) {
+                                //$('#error_modal').modal('show');
+                            }
+                        }
+
+                        // $('#ai_similarity').html(`To calculate the confidence level, AI chooses the highest probability among predicted labels for dis-similarity, and similarity.</br>Calculated Similarity: ${parseInt(files[current_pair_ind][3] * 100)}%</br>Calculated Dissimilarity: ${100 - parseInt(files[current_pair_ind][3] * 100)}%`);
+                        if (similar_result == true) {
+                            $('#calc_sim').html(`<div class="progress" style="margin-top: 6px;"><div class="progress-bar" role="progressbar" aria-valuenow="${parseInt(near_files[current_pair_ind][3] * 100)}"aria-valuemin="0" aria-valuemax="100" style="width:${parseInt(near_files[current_pair_ind][3] * 100)}%">${parseInt(near_files[current_pair_ind][3] * 100)}%</div></div>`);
+                            $('#calc_dissim').html(`<div class="progress" style="margin-top: 6px;"><div class="progress-bar" role="progressbar" aria-valuenow="${100 - parseInt(near_files[current_pair_ind][3] * 100)}"aria-valuemin="0" aria-valuemax="100" style="width:${100 - parseInt(near_files[current_pair_ind][3] * 100)}%">${100 - parseInt(near_files[current_pair_ind][3] * 100)}%</div></div>`);
+                        } else {
+                            $('#calc_sim').html(`<div class="progress" style="margin-top: 6px;"><div class="progress-bar" role="progressbar" aria-valuenow="${100 - parseInt(near_files[current_pair_ind][3] * 100)}"aria-valuemin="0" aria-valuemax="100" style="width:${100 - parseInt(near_files[current_pair_ind][3] * 100)}%">${100 - parseInt(near_files[current_pair_ind][3] * 100)}%</div></div>`);
+                            $('#calc_dissim').html(`<div class="progress" style="margin-top: 6px;"><div class="progress-bar" role="progressbar" aria-valuenow="${parseInt(near_files[current_pair_ind][3] * 100)}"aria-valuemin="0" aria-valuemax="100" style="width:${parseInt(near_files[current_pair_ind][3] * 100)}%">${parseInt(near_files[current_pair_ind][3] * 100)}%</div></div>`);
+                        }
+
+
+                        document.getElementById('details_col_1').style.visibility = 'hidden';
+                        //document.getElementById('details_col_2').style.visibility = 'hidden';
+                        //document.getElementById('padding_div_1').style.visibility = 'hidden';
+                        document.getElementById('padding_div_2').style.visibility = 'hidden';
+                        document.getElementById('padding_div_3').style.visibility = 'hidden';
+                        document.getElementById('padding_div_4').style.visibility = 'hidden';
+                        document.getElementById('padding_div_5').style.visibility = 'hidden';
+                        document.getElementById('extra_col_no_show').style.visibility = 'hidden';
+
+                        $('#details_btn').hide();
+                        $('#additional_screening_btn').hide();
+                        $('#ai_confidence').hide();
+                        $('#extra_details').hide();
+                        $('#details_conf').hide();
+                        $('#details_btn').html('View details >>');
+                        showing_details = false;
+
+                        document.getElementById('inter_btn').innerHTML = 'Disagree, Intervene';
+                        document.getElementById('next_btn').innerHTML = 'Agree, Next';
+                        document.getElementById('inter').style.visibility = 'visible';
+                        document.getElementById('btns_div').style.visibility = 'hidden';
+
+                        f1 = files[current_pair_ind][2];
+
+                        remove_past_borders();
+
+                        if (f1 == 0) {
+                            // set color and text
+                            document.getElementById("main_text").innerHTML = 'AI decided that these are the <span style="color: green;">same</span> person. What do you think?';
+                            if (current_pair_ind >= 0) {
+                                //document.getElementById("img1").classList.add('border');
+                                //document.getElementById("img2").classList.add('border');
+                                //document.getElementById("img1").classList.add('border-success');
+                                //document.getElementById("img2").classList.add('border-success');
+                            }
+                            user_decided = 1;
+                        } else {
+                            document.getElementById("main_text").innerHTML = 'AI decided that these are two <span style="color: red;">different</span> people. What do you think?';
+                            if (current_pair_ind >= 0) {
+                                //document.getElementById("img1").classList.add('border');
+                                //document.getElementById("img2").classList.add('border');
+                                //document.getElementById("img1").classList.add('border-danger');
+                                //document.getElementById("img2").classList.add('border-danger');
+                            }
+                            user_decided = 2;
+                        }
+
+                        current_time = 30 * 1000;
+                        // set s_time
+                        s_time = get_time();
+                        c_time = 'None';
+                    }
+
+                }
+
+                // show remaining time
+                var time = time_limit - total_time;
+                var minutes = Math.floor(time / 60);
+                var seconds = time - minutes * 60;
+                var finalTime = str_pad_left(minutes, '0', 2) + ':' + str_pad_left(seconds, '0', 2);
+            }
+
+
+        }
+
+        // view details btn
+        function show_details() {
+            used_details = true;
+            if (!showing_details) {
+                $('#details_btn').html('<< Less details');
+
+                document.getElementById('details_col_1').style.visibility = 'visible';
+                //document.getElementById('details_col_2').style.visibility = 'visible';
+                //document.getElementById('padding_div_1').style.visibility = 'visible';
+                document.getElementById('padding_div_2').style.visibility = 'visible';
+                document.getElementById('padding_div_3').style.visibility = 'visible';
+                document.getElementById('padding_div_4').style.visibility = 'visible';
+                document.getElementById('padding_div_5').style.visibility = 'visible';
+                document.getElementById('extra_col_no_show').style.visibility = 'visible';
+                showing_details = true;
+            } else {
+                // hide details
+                document.getElementById('details_col_1').style.visibility = 'hidden';
+                //document.getElementById('details_col_2').style.visibility = 'hidden';
+                //document.getElementById('padding_div_1').style.visibility = 'hidden';
+                document.getElementById('padding_div_2').style.visibility = 'hidden';
+                document.getElementById('padding_div_3').style.visibility = 'hidden';
+                document.getElementById('padding_div_4').style.visibility = 'hidden';
+                document.getElementById('padding_div_5').style.visibility = 'hidden';
+                document.getElementById('extra_col_no_show').style.visibility = 'hidden';
+                $('#details_btn').html('View details >>');
+                showing_details = false;
+            }
+
+        }
+
+        function get_time() {
+            // returns UTC date time in format dateTtime
+            d = new Date();
+            return d.getUTCMonth() + 1 + '/' + d.getUTCDate() + '/' + d.getUTCFullYear() + 'T' + d.getUTCHours() + ':' + d.getUTCMinutes() + ':' + d.getUTCSeconds() + ':' + d.getUTCMilliseconds();
+        }
+
+        function str_pad_left(string, pad, length) {
+            return (new Array(length + 1).join(pad) + string).slice(-length);
+        }
+
+        function remove_past_borders() {
+            if ($("#img1").hasClass("border-danger")) {
+                document.getElementById("img1").classList.remove('border');
+                document.getElementById("img2").classList.remove('border');
+                document.getElementById("img1").classList.remove('border-danger');
+                document.getElementById("img2").classList.remove('border-danger');
+            } else if ($("#img1").hasClass("border-success")) {
+                document.getElementById("img1").classList.remove('border');
+                document.getElementById("img2").classList.remove('border');
+                document.getElementById("img1").classList.remove('border-success');
+                document.getElementById("img2").classList.remove('border-success');
+            } else if ($("#img1").hasClass("border-warning")) {
+                document.getElementById("img1").classList.remove('border');
+                document.getElementById("img2").classList.remove('border');
+                document.getElementById("img1").classList.remove('border-warning');
+                document.getElementById("img2").classList.remove('border-warning');
+            } else if ($("#img1").hasClass("border")) {
+                document.getElementById("img1").classList.remove('border');
+                document.getElementById("img2").classList.remove('border');
+            }
+        }
+
+        // intervene button
+        function intervene() {
+            if (danger_pair && !set_additional_screening) {
+                // diaplay modal
+                $(document).on('hide.bs.modal','#danger_pair_modal', function () {
+                    // goto next pair
+                    //go_next();
+
+                });
+                // $('#danger_pair_modal').modal('show');
+                danger_pair = false;
+                // return true;
+            }
+
+            // show deciding buttons
+            not_started = true;
+            current_time = 31 * 10000;
+            
+            document.getElementById('inter').style.visibility = 'hidden';
+            $('#inter').css('margin-top', '-50px');
+            $('#additional_screening_btn').hide();
+            
+            // document.getElementById('main_text').innerHTML = 'AI decided that they are ' + '<span style="color: red;">different</span>' + 'but is unsure. What is your decision?';
+            f1 = files[current_pair_ind][2]
+            remove_past_borders();
+
+            if (condition == 1) {
+                // document.getElementById("main_text").innerHTML = 'Are these two images of the same person?';
+                show_case = 1;
+                decision_changed = true;
+            } else if (condition == 3) {
+                if (f1 == 0) {
+                    // set color and text
+                    document.getElementById("main_text").innerHTML = 'AI decided that they are the <span style="color: green;">same</span> person, but you intervened. What is your decision?';
+                    //document.getElementById("img1").classList.add('border');
+                    //document.getElementById("img2").classList.add('border');
+                    //document.getElementById("img1").classList.add('border-success');
+                    //document.getElementById("img2").classList.add('border-success');
+                    user_decided = 1;
+                } else {
+                    document.getElementById("main_text").innerHTML = 'AI decided that they are two <span style="color: red;">different</span> people, but you intervened. What is your decision?';
+                    //document.getElementById("img1").classList.add('border');
+                    //document.getElementById("img2").classList.add('border');
+                    //document.getElementById("img1").classList.add('border-danger');
+                    //document.getElementById("img2").classList.add('border-danger');
+                    user_decided = 2;
+                }
+            }
+
+            not_started = false;
+            show_buttons();
+            c_time = get_time();
+        }
+
+        function go_next() {
+            next_clicked = true;
+            current_time = 0;
+            c_time = get_time();
+            e_time = c_time;
+
+            if (danger_pair && !set_additional_screening) {
+                // diaplay modal
+                $(document).on('hide.bs.modal','#danger_pair_modal', function () {
+                    // goto next pair
+                    // go_next();
+
+                });
+                // $('#danger_pair_modal').modal('show');
+                //danger_pair = false;
+                // return true;
+            }
+
+            // save the final result
+            // record time
+            var img1_path = document.getElementById('img1').getAttribute('src').split("/");
+            var img2_path = document.getElementById('img2').getAttribute('src').split("/");
+            img1_path = img1_path[img1_path.length - 1];
+            img2_path = img2_path[img2_path.length - 1];
+
+            // add to array
+            user_result['final|' + img1_path + ' ' + img2_path + condition.toString()] = user_decided + '|' + clicked + '|' + aipair + '|' + s_time + '|' + c_time + '|' + e_time + '|' + next_clicked + '|' + decision_changed + '|' + used_additional + '|' + used_details;
+            current_page_idx = 1;
+
+            if(current_pair_ind >= 0) {
+                // change the style
+                $('#li-p1').html(`<p>This face recognition system has been trained<span id="dots">...</span><span id="more" style="display: none;">, tested, and validated on 100M+ photos of 500,000 unique individuals collected from publicly available databases such as VGGFace2, Multi-PIE, and others. A breakdown of the estimated race, gender, and age of the unique individuals in the database is presented here:</span> <a style="color: blue; text-decoration: underline;" onclick="show_more('dots', 'more', 'myBtn')" id="myBtn">Read more</a></p>`);
+
+                $('#li-p2').html(`<p>The AI's confidence level is calculated in this manner: first, a metric that signifies the mathematical distance between two image pairs is calculated. <span id="dots2">...</span><span id="more2" style="display: none;">Then, the difference between the mathematical distance and a pre-determined (computed during the training and validation stages) threshold is calculated. Finally, the difference is normalized by a factor and the confidence level is calculated using probability measures associated with the standard normal distribution. Thus, the AI's confidence is an indication, based on the predetermined threshold. Confidence levels closer to 100% indicate higher confidence. </span> <a style="color: blue; text-decoration: underline;" onclick="show_more('dots2', 'more2', 'myBtn2')" id="myBtn2">Read more</a> </p>`);
+
+                $('#li-p3').html(`<p>The similarity and dissimilarities are <span id="dots3">...</span><span id="more3" style="display: none;"> directly derived from the AI's confidence level i.e.,  the higher of the two probabilities is the AI's confidence level. See explanation of the AI's confidence level for more information about its calculation. Both probabilities are calculated using the scaled difference between the distance metric and the threshold. The calculation of the similarity and dissimilarity probability is based on the assumption that the threshold is distributed as standard normal, and the scaled differences are realizations of a noise-generating process.</span> <a style="color: blue; text-decoration: underline;" onclick="show_more('dots3', 'more3', 'myBtn3')" id="myBtn3">Read more</a> </p>`);
+            }
+        }
+
+        // add user response function
+        function add_user_response(resp) {
+            //if (!clicked && !aipair && clicked_count == 0 && condition == 2) {
+            //    alert('Please check the AI\'s suggestion first!');
+            //    return false;
+            //}
+
+            // add to array
+            e_time = get_time();
+
+            // get image pair names
+            var img1_path = document.getElementById('img1').getAttribute('src').split("/");
+            var img2_path = document.getElementById('img2').getAttribute('src').split("/");
+            img1_path = img1_path[img1_path.length - 1];
+            img2_path = img2_path[img2_path.length - 1];
+            user_result[img1_path + ' ' + img2_path + '_uc' + condition.toString() + ' ' + resp.toString()] = resp + '|' + clicked + '|' + aipair + '|' + s_time + '|' + c_time + '|' + e_time + '|' + next_clicked + '|' + decision_changed  + '|' + used_additional + '|' + used_details;
+
+            // check for other stuffbtn2
+            if (current_time >= 31) {
+                current_time = 0;
+            }
+            user_decided = resp;
+
+            if (!aipair) {
+                clicked_count = 1;
+            }
+
+            last_btns_click = resp;
+            return true;
+        }
+
+        function show_sugg() {
+            // show AI suggestion
+            f1 = files[current_pair_ind][2];
+            clicked = true;
+
+            remove_past_borders();
+
+            if (f1 == 0) {
+                // set color and text
+                //document.getElementById("img1").classList.add('border');
+                //document.getElementById("img2").classList.add('border');
+                //document.getElementById("img1").classList.add('border-success');
+                //document.getElementById("img2").classList.add('border-success');
+                document.getElementById('ai-truth').innerHTML = 'AI decided = <span style="color: green;font-family:tahoma,garamond,serif;font-size:40px;">Same</span>';
+            } else {
+                //document.getElementById("img1").classList.add('border');
+                //document.getElementById("img2").classList.add('border');
+                //document.getElementById("img1").classList.add('border-danger');
+                //document.getElementById("img2").classList.add('border-danger');
+                document.getElementById('ai-truth').innerHTML = 'AI decided = <span style="color: red;font-family:tahoma,garamond,serif;font-size:40px;">Different</span>';
+            }
+
+            document.getElementById('ai-truth').style.visibility = 'hidden';
+            c_time = get_time();
+        }
+
+        function submit_survey() {
+            $("#mturk_form").submit(function (eventObj) {
+                $("<input />").attr("type", "hidden")
+                    .attr("name", "user_response")
+                    .attr("value", JSON.stringify(user_result))
+                    .appendTo("#mturk_form");
+
+                $("<input />").attr("type", "hidden")
+                    .attr("name", "condition")
+                    .attr("value", JSON.stringify(current_condition))
+                    .appendTo("#mturk_form");
+
+                $("<input />").attr("type", "hidden")
+                    .attr("name", "qualtrics_id_1")
+                    .attr("value", JSON.stringify(qualtrics_id_1))
+                    .appendTo("#mturk_form");
+                $("<input />").attr("type", "hidden")
+                    .attr("name", "qualtrics_id_2")
+                    .attr("value", JSON.stringify(qualtrics_id_2))
+                    .appendTo("#mturk_form");
+                $("<input />").attr("type", "hidden")
+                    .attr("name", "pro_id_1")
+                    .attr("value", JSON.stringify(pro_params.split(', ')[0]))
+                    .appendTo("#mturk_form");
+                $("<input />").attr("type", "hidden")
+                    .attr("name", "pro_id_2")
+                    .attr("value", JSON.stringify(pro_params.split(', ')[1]))
+                    .appendTo("#mturk_form");
+                $("<input />").attr("type", "hidden")
+                    .attr("name", "pro_id_3")
+                    .attr("value", JSON.stringify(pro_params.split(', ')[2]))
+                    .appendTo("#mturk_form");
+                $("<input />").attr("type", "hidden")
+                    .attr("name", "TID")
+                    .attr("value", "4th")
+                    .appendTo("#mturk_form");
+
+                return true;
+            });
+
+            document.getElementById('submitButton').click();
+        }
+
+        // stop survey func
+        function stop_survey() {
+            // stop survey and show the final prompt
+            clearInterval(timer);
+            document.getElementById('survey_form').style.visibility = 'hidden';
+            //document.getElementById('row1').style.visibility = 'hidden';
+            document.getElementById('inter').style.visibility = 'hidden';
+            document.getElementById('btns-row').style.visibility = 'hidden';
+            document.getElementById('btns_div').style.visibility = 'hidden';
+            document.getElementById('survey_form').style.display = 'none';
+            //document.getElementById('row1').style.display = 'none';
+            document.getElementById('inter').style.display = 'none';
+            document.getElementById('btns-row').style.display = 'none';
+            document.getElementById('btns_div').style.display = 'none';
+            $('#top_container').html(final_id);
+        }
+
+        function pause_survey() {
+            // stop survey and show the final prompt
+            clearInterval(timer);
+            document.getElementById('survey_form').style.visibility = 'hidden';
+            //document.getElementById('row1').style.visibility = 'hidden';
+            document.getElementById('inter').style.visibility = 'hidden';
+            document.getElementById('btns-row').style.visibility = 'hidden';
+            document.getElementById('btns_div').style.visibility = 'hidden';
+            document.getElementById('survey_form').style.display = 'none';
+            //document.getElementById('row1').style.display = 'none';
+            document.getElementById('inter').style.display = 'none';
+            document.getElementById('btns-row').style.display = 'none';
+            document.getElementById('btns_div').style.display = 'none';
+            saved_container = $('#top_container').html();
+            $('#top_container').html(qualtrics_mid);
+        }
+
+        function resume_survey() {
+            // stop survey and show the final prompt
+            if (!qual_id_btn)
+                return false;
+            $('#top_container').html(saved_container);
+            document.getElementById('survey_form').style.visibility = 'visible';
+            //document.getElementById('row1').style.visibility = 'hidden';
+            document.getElementById('inter').style.visibility = 'hidden';
+            document.getElementById('btns-row').style.visibility = 'hidden';
+            document.getElementById('btns_div').style.visibility = 'hidden';
+            document.getElementById('survey_form').style.display = '';
+            //document.getElementById('row1').style.display = '';
+            document.getElementById('inter').style.display = '';
+            document.getElementById('btns-row').style.display = '';
+            document.getElementById('btns_div').style.display = '';
+            timer = setInterval(survey_logic, 1000);
+            current_time = 0;
+            resumed = true;
+            return false;
+        }
+
+        // show and hide buttons functions
+        function show_buttons() {
+            document.getElementById('btns_div').style.visibility = 'visible';
+        }
+
+        function hide_buttons() {
+            document.getElementById('btns_div').style.visibility = 'hidden';
+            document.getElementById('inter').style.visibility = 'hidden';
+
+            // display the extra info btn   
+            $('#details_btn').show();
+            $('#ai_confidence').show();
+            $('#details_conf').show();
+            $('#additional_screening_btn').show();
+
+            // console.log(current_page_idx);
+        }
+
+        function randomDate(start, end) {
+            return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+        }
+
+        function countCharacters(char, string) {
+            return string.split('').reduce((acc, ch) => ch === char ? acc + 1 : acc, 0)
+        }
+
+        /*
+        function get_grount_truth(l1, l2) {
+            //console.log(l1);
+            // console.log(l2);
+            l1 = l1.split('/')[4].replace('.png', '');
+            l2 = l2.split('/')[4].replace('.png', '');
+
+            if (l1[0] == 'n') {
+                return l1.split('_')[0] == l2.split('_')[0];
+            }
+            else if (l1.indexOf('_n') != -1) {
+                return l1.split('_')[1] == l2.split('_')[1];
+            } else if (countCharacters('_', l1) == 1) {
+                return l1.split('_')[0] == l2.split('_')[0];
+            } else {
+                return l1.split('_')[1] == l2.split('_')[1];
+            }
+        }
+        */
+
+        $(document).ready(function () {
+            //    $('[data-toggle="tooltip"]').tooltip(); 
+            $('#verify_text').tooltip();
+            $('#additional_screening_btn').tooltip();
+        });
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

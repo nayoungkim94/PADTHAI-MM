@@ -1,0 +1,5 @@
+1. using Rstudio ("reorder_hcluster.R") to generate hierarchical clusters based on similarity scores in "cluster_matrix_nofirstcolumn.csv".
+
+2. update the data in "hcluster.json" using jupyter notebook ("test_data.ipynb").
+
+3. check the column names in "27_clusters.csv" and "cluster_matrix_nofirstcolumn.csv" to make sure the names match, also need to check the date format for news reports in "27_clusters.csv".

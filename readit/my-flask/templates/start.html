@@ -1,0 +1,104 @@
+{% block content %}
+
+<html>
+<head>
+    <style>
+        body 
+        {
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        background-image: url("{{url_for('static', filename='READIT 2.0 start.png')}}")
+        /*background-image: url("{{url_for('static', filename='READIT 2.0 start.png')}}")*/
+        }
+        .container {
+        position: relative;
+        }
+        .center {
+        position: absolute;
+        top: 680px;
+        width: 100%;
+        text-align: center;
+        font-size: 35px;
+        font-weight: 900;
+        font-family: 'Trebuchet MS', sans-serif;
+        }
+        .button {
+        background-color: #abafb3; /* Green */
+        border: none;
+        color: black;
+        padding: 5px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 30px;
+        width: 120px;
+        margin: 4px 2px;
+        cursor: pointer;
+        }
+        .button1 {border-radius:10px;}
+        .center-block {
+        margin: auto; 
+        display: block;
+        width: 400px;
+        padding: 10px;
+        font-family: 'Trebuchet MS', sans-serif;
+        }
+    </style>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="center">
+            <label for="fname" >Enter your Prolific ID:</label>
+            <input type = "text" class="center-block" id="participantID"/>
+            <button style="text-align: center;" class="button button1" role="button" id="startBtn">Start ></button>
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+        const startTime = new Date(); //get the start time
+        function timeEnd(startTime) {
+            const endTime = new Date();
+            const interval = (endTime.getTime() - startTime.getTime()) / 1000;
+            return interval;
+        }
+    
+        document.getElementById("startBtn").onclick = function () {
+            const participantID = document.getElementById("participantID").value
+            if(participantID.length === 0){
+                alert("participant ID is missing!");
+                return false;
+            }
+    
+            const tmpTime = timeEnd(startTime);
+            const pageInfo = "startPage";
+            $.ajax({
+                url: "/recordParticipantID",
+                type: "POST",
+                async: false,
+                data: {
+                    timestamp: tmpTime,
+                    starttime: startTime,
+                    key: pageInfo,
+                    participantID: participantID
+                }
+            }).done(function( msg ) {
+                if(msg == "false"){
+                    alert("Warning: Participant ID already exist!");
+                } else if(msg == "empty")
+                    alert("Empty Participant ID!");
+                else {
+                    window.location.href = "http://127.0.0.1:3000";
+                    // window.location.href = "/index.html";
+                }
+            });
+        };
+    
+    </script>
+
+</body>
+</html>
+
+{% endblock content %}

@@ -1,0 +1,157 @@
+keyword,tfidf,cluster_label
+corn,0.353326718,Agricultural economics
+cent,0.27271706,Agricultural economics
+crop,0.206843064,Agricultural economics
+soybean,0.203682005,Agricultural economics
+farm,0.182817614,Agricultural economics
+august,0.178514302,Agricultural economics
+airline,0.528397055,Air travel
+faa,0.196138833,Air travel
+carrier,0.196088361,Air travel
+flight,0.190014704,Air travel
+airport,0.175163262,Air travel
+valujet,0.170415707,Air travel
+death,0.302103635,Animal deaths
+livestock,0.289090916,Animal deaths
+fish,0.289090916,Animal deaths
+farm,0.227121892,Animal deaths
+trespass,0.197528585,Animal deaths
+farmer,0.197528585,Animal deaths
+contraband,0.254605996,Arms trafficking
+military,0.210152212,Arms trafficking
+weapon,0.177741784,Arms trafficking
+surfacetoair,0.169737331,Arms trafficking
+police,0.157947654,Arms trafficking
+airport,0.157614159,Arms trafficking
+china,0.36909833,Asian News
+kong,0.353050576,Asian News
+hong,0.311475905,Asian News
+sun,0.264223388,Asian News
+satellite,0.252147161,Asian News
+orbit,0.138765557,Asian News
+car,0.246289402,Automobile economics
+gm,0.203902558,Automobile economics
+toyota,0.198946318,Automobile economics
+steer,0.198946318,Automobile economics
+price,0.191910295,Automobile economics
+model,0.190576282,Automobile economics
+terrorism,0.284323799,Bioterrorism threats
+bioterrorism,0.217140039,Bioterrorism threats
+zealot,0.162911709,Bioterrorism threats
+ideology,0.162911709,Bioterrorism threats
+cdc,0.162911709,Bioterrorism threats
+supply,0.151596128,Bioterrorism threats
+cable,0.189373859,Communications and technology
+company,0.156801012,Communications and technology
+service,0.155000087,Communications and technology
+compute,0.153504786,Communications and technology
+corporation,0.142105722,Communications and technology
+network,0.124413346,Communications and technology
+threat,0.180624479,Crime bulletin
+suv,0.152493661,Crime bulletin
+fire,0.149109544,Crime bulletin
+student,0.141942168,Crime bulletin
+neighborhood,0.141942168,Crime bulletin
+vastopolis,0.139682384,Crime bulletin
+radioactive,0.281195981,Dirty Bomb
+dirty,0.231492075,Dirty Bomb
+bomb,0.227409226,Dirty Bomb
+dread,0.15432805,Dirty Bomb
+exercise,0.142361857,Dirty Bomb
+homeland,0.140597991,Dirty Bomb
+rate,0.3137853,Economic outlook
+federal,0.217016518,Economic outlook
+inflation,0.206682398,Economic outlook
+economy,0.192665175,Economic outlook
+bond,0.175605245,Economic outlook
+construction,0.136581857,Economic outlook
+school,0.183340775,Family economics
+outsource,0.173153367,Family economics
+museum,0.149321123,Family economics
+district,0.140260524,Family economics
+exhibit,0.11220842,Family economics
+corporate,0.103874919,Family economics
+million,0.310883413,Finance and business
+company,0.303142628,Finance and business
+share,0.268789587,Finance and business
+cent,0.210697583,Finance and business
+dollar,0.173057397,Finance and business
+market,0.170929875,Finance and business
+snapple,0.283683525,Food corporations
+share,0.255852571,Food corporations
+quaker,0.252075402,Food corporations
+company,0.2408537,Food corporations
+nabisco,0.21606463,Food corporations
+million,0.178602842,Food corporations
+food,0.319947832,Food supply
+driver,0.246868615,Food supply
+truck,0.185151461,Food supply
+wheeler,0.167261937,Food supply
+upset,0.152381192,Food supply
+accident,0.116527216,Food supply
+computer,0.358170918,Hacking
+teenager,0.299377853,Hacking
+librarian,0.252687978,Hacking
+press,0.171029626,Hacking
+vandal,0.168458652,Hacking
+cyber,0.168458652,Hacking
+doctor,0.220996653,Healthcare
+company,0.171680527,Healthcare
+drug,0.161011847,Healthcare
+medicine,0.157854752,Healthcare
+patient,0.134441527,Healthcare
+product,0.128926496,Healthcare
+bank,0.260537007,Mergers and acquisitions
+company,0.222718309,Mergers and acquisitions
+nationsbank,0.217169309,Mergers and acquisitions
+million,0.215419186,Mergers and acquisitions
+reorganize,0.187679002,Mergers and acquisitions
+stock,0.178065483,Mergers and acquisitions
+launder,0.381480044,Money Laundering
+money,0.266237298,Money Laundering
+quick,0.236155696,Money Laundering
+scheme,0.231613403,Money Laundering
+mayor,0.214069406,Money Laundering
+arrest,0.202772396,Money Laundering
+house,0.20874184,National election and politics
+white,0.202658446,National election and politics
+tax,0.12413808,National election and politics
+campaign,0.122465188,National election and politics
+year,0.110293233,National election and politics
+republican,0.107534612,National election and politics
+patino,0.449203233,Patino laboratory microbes
+flu,0.233850913,Patino laboratory microbes
+equipment,0.230322697,Patino laboratory microbes
+professor,0.169478016,Patino laboratory microbes
+university,0.161159857,Patino laboratory microbes
+bioterrorism,0.128343781,Patino laboratory microbes
+taxpayer,0.208069258,Personal finance
+pension,0.182060601,Personal finance
+law,0.177254012,Personal finance
+foundation,0.169056272,Personal finance
+tax,0.12236369,Personal finance
+ira,0.112560757,Personal finance
+client,0.202017706,Securities lawsuits
+advise,0.181583009,Securities lawsuits
+company,0.171800996,Securities lawsuits
+million,0.159246807,Securities lawsuits
+secure,0.121587234,Securities lawsuits
+bond,0.118423702,Securities lawsuits
+game,0.408705617,Sports events and broadcasting
+year,0.114969414,Sports events and broadcasting
+inning,0.095263876,Sports events and broadcasting
+rent,0.08898294,Sports events and broadcasting
+firm,0.085409562,Sports events and broadcasting
+contest,0.08464954,Sports events and broadcasting
+league,0.165243205,Sports news
+oakland,0.108827992,Sports news
+chicago,0.103619392,Sports news
+houston,0.099145923,Sports news
+downtown,0.092666133,Sports news
+england,0.091635927,Sports news
+tobacco,0.521955369,Tobacco
+industry,0.261606467,Tobacco
+cigarette,0.260421265,Tobacco
+jury,0.204597817,Tobacco
+verdict,0.166076708,Tobacco
+propose,0.163457857,Tobacco

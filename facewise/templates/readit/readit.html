@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Readit</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    {% for file in js_files %}
+    <script type="text/javascript" src="{{file}}"></script>
+    {% endfor %}
+
+    <script src="https://unpkg.com/@yaireo/tagify"></script>
+    <script src="https://unpkg.com/@yaireo/tagify@3.1.0/dist/tagify.polyfills.min.js"></script>
+    <link href="https://unpkg.com/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
+
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    />
+
+    <!-- Bootstrap icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .info-div {
+        z-index: 0;
+        height: 100%;
+        max-height: 900px;
+        overflow-y: scroll;
+      }
+
+      .btn-selected {
+        background: #f6b26b;
+      }
+ 
+      .btn-unselected {
+        background: white;
+      }
+
+      .swd-button {
+          background: #f6b26b;
+          border: 1px solid;
+          border-radius: 5px;
+          color: white;
+          display: inline-block;
+          padding: 10px 15px;
+      }
+
+      .btn-outline-secondary:hover {
+        background: grey;
+      }
+
+      .btn-outline-secondary {
+        background: white;
+      }
+
+    </style>
+  </head>
+  <body style="background-color: #f9e5b2;">
+    <div class="container" style="margin-top: 10px;">
+      <h1 class="text-center">Readit</h1>
+    </div>
+    <hr />
+    <div class="container-fluid" style="margin-top: 10px;">
+
+    <div class="row" style="margin-top: 20px;">
+      <div class="col-md-5 summary"  style="padding-right: 35px; border-right: 1px solid #8f8c84;">
+        <div class="mb-3 row" style="margin-left: 25px;">
+          
+          <div class="col-sm-10 input-group">
+            <label for="inputPassword" class="col-sm-2 col-form-label" style="font-weight: bold; margin-right: 10px;">Keywords:</label>
+            <input type="text" name="tags" class="form-control form-control-sm">
+            <button class="btn btn-outline-secondary" style="" type="button" id="get_data_btn"><i class="bi bi-search"></i></button>
+          </div>
+        </div>
+        <div class="row" style="margin-top:10px;">
+          <div class="col text-center">
+            <!-- <button type="button" class="swd-button" id="get_data_btn" href="#" style="width: 100px;">Analyze</button> -->
+            
+          </div>
+        </div>
+
+        <h4 style="margin-left: 15px; margin-top: 20px;">Summary:</h4>
+        <div class="h-1 p-3 bg-light border info-summary" style="margin: 15px">
+        </div>
+
+        <p id="summary-extra-info" align="right" style="font-size: small; margin-right: 25px;">1,020 pieces of content, 5 results shown per group</p>
+      </div>
+
+      <div class="col-md-4" style="margin-left: 15px;">
+        <h4 style="margin-left: 15px;">Raw Content:</h4>
+        <div class="info-div" style="margin: 15px;">
+
+        </div>
+      </div>
+
+      <div class="col-md-2 text-center" style="padding-top: 100px;">
+        <div class="row">
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tools" style="border: 0px; background: #f9e5b2; width: 150px; margin-left: 40px; margin-top: 30px;">
+            <i style="font-size: 100px; color: #f6b26b;" class="bi bi-plus"></i> <p style="color: black; font-weight: bold;">Tools</p>
+          </button>
+        </div>
+        <div class="row">
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#options" style="border: 0px; background: #f9e5b2; width: 150px; margin-left: 40px; margin-top: 30px;">
+            <i style="font-size: 100px; color: #f6b26b;" class="bi bi-plus"></i> <p style="color: black; font-weight: bold;">Options</p>
+          </button>
+        </div>
+      </div>
+
+    </div>
+</div>
+
+    <!-- Modals here -->
+    <!-- Options Modal -->
+    <!-- Modal -->
+    <div class="modal fade" id="options" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Options</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" >
+            <div class="row">
+              <div class="col-sm-3" style="border-right: 1px solid #f6b26b; height: 500px;">
+                <!-- Options selects -->
+                <div class="row">
+                  <button id="op_btn_1" type="button" class="btn btn-selected" onclick="change_btn('#op_btn_1')" style="margin-left:15px; width: 160px; border: 0px; border-radius: 0%; color: black; font-weight: bolder;">Content Shown</button>
+                </div>
+                <div class="row" style="margin-top: 20px;">
+                  <button id="op_btn_2" type="button" class="btn btn-unselected" onclick="change_btn('#op_btn_2')" style="margin-left:15px; width: 160px; border: 0px; border-radius: 0%; color: black; font-weight: bolder;">Date Range</button>
+                </div>
+                <div class="row" style="margin-top: 20px;">
+                  <button id="op_btn_3" type="button" class="btn btn-unselected" onclick="change_btn('#op_btn_3')" style="margin-left:15px; width: 160px; border: 0px; border-radius: 0%; color: black; font-weight: bolder;">Data Sheet</button>
+                </div>
+                <div class="row" style="margin-top: 20px;">
+                  <button id="op_btn_4" type="button" class="btn btn-unselected" onclick="change_btn('#op_btn_4')" style="margin-left:15px; width: 160px; border: 0px; border-radius: 0%; color: black; font-weight: bolder;">Diagnostics</button>
+                </div>
+              </div>
+  
+              <div class="col-sm-8" id="options-content" style="margin-left: 15px;">
+                <!-- content of the option --> 
+                <p>Most Influential Content</p><p>Pieces of Content Shown: 1</p></ br><p>Extractive Summary</p><p>Pieces of Content Shown: 5</p>
+              </div>
+            </div>
+            
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- TOOLS MODAL -->
+    <div class="modal fade" id="tools" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Tools</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" >
+            <div class="row">
+              <div class="col-sm-3" style="border-right: 1px solid #f6b26b; height: 500px;">
+                <!-- Options selects -->
+                <div class="row">
+                  <button id="to_btn_1" type="button" class="btn btn-selected" onclick="change_btn_tools('#to_btn_1')" style="margin-left:15px; width: 160px; border: 0px; border-radius: 0%; color: black; font-weight: bolder;">Comparison Summary</button>
+                </div>
+                <div class="row" style="margin-top: 20px;">
+                  <button id="to_btn_2" type="button" class="btn btn-unselected" onclick="change_btn_tools('#to_btn_2')" style="margin-left:15px; width: 160px; border: 0px; border-radius: 0%; color: black; font-weight: bolder;">Visualization</button>
+                </div>
+              </div>
+  
+              <div class="col-sm-8" id="tools-content" style="margin-left: 15px;">
+                <!-- content of the option --> 
+                <p>Check the following characteristics to include in the comparison summary:</p></br></br>
+
+                <p>New keywords: <input name='tags_new' id="tags_new" value='' class="form-inline"></p></br></br>
+
+                <p>Different date range: <input id="startDate" class="form-inline" type="date" />  <input id="endDate" class="form-inline" type="date" /></p></br></br>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="chk1">
+                  <label class="form-check-label" for="chk1">
+                    Individual user accounts
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="chk2" checked>
+                  <label class="form-check-label" for="chk2">
+                    Media/company accounts
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="chk3" disabled>
+                  <label class="form-check-label" for="chk3">
+                    Reddit posts
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="chk4" checked disabled>
+                  <label class="form-check-label" for="chk4">
+                    Twitter posts
+                  </label>
+
+              </div>
+            </div>
+          </div> <!-- BODY END -->
+
+          <div class="modal-footer">
+            <button type="button" class="btn" data-bs-dismiss="modal" aria-label="" style="background: #efefef; width: 100px;" onclick="alter_summary()">Continue</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+    <!-- fullscreen model -->
+    <div class="modal-dialog modal-fullscreen-sm-down" id="alternate_summary">
+      
+    </div>
+
+
+    <script>
+      var input = document.querySelector('input[name=tags]');
+
+      //  initialize Tagify on the above input node reference
+      new Tagify(input)
+
+      var input = document.querySelector('input[name=tags_new]');
+      new Tagify(input)
+
+      function change_btn_tools(my_id) {
+        var btns_ids = ["#to_btn_1", "#to_btn_2"];
+
+        btns_ids.forEach(x => {
+          if($(x).hasClass("btn-selected")) {
+            $(x).removeClass("btn-selected");
+            $(x).addClass("btn-unselected");
+          }
+        });
+
+        $(my_id).removeClass("btn-unselected");
+        $(my_id).addClass("btn-selected");
+
+        if(my_id == "#to_btn_1") {
+          show_comparison();
+        } else if(my_id == "#to_btn_2") {
+          show_viz();
+        }
+      }
+
+      function alter_summary() {
+        // gather the information on the alternative summary -> date and checkboxes
+        let start_date = $('#startDate').val();
+        let end_date = $('#endDate').val();
+        let tags_json = $('#tags_new').val();
+        let indiv_accounts = document.getElementById('chk1').checked;
+        let media_accounts = document.getElementById('chk2').checked;
+        // let reddit_posts = document.getElementById('chk1').checked;
+        // let twitter_posts = document.getElementById('chk1').checked;
+
+        // pass these to the backend
+        $.LoadingOverlay("show");
+
+        Promise.all([d3.json(base_url + 
+          '/get_alternate_summary?tags=' + tags_json + '&sd=' + start_date + '&ed=' + end_date + '&indiv=' + indiv_accounts + '&media=' + media_accounts
+          )]).then(function(data) {
+            console.log(data);
+            if(data[0] == 'OK') {
+                // update the results
+                console.log(data);
+
+                $.LoadingOverlay("hide");
+            }
+            else{
+                alert('Error! Invalid Form Data!');
+                $.LoadingOverlay("hide");
+            }
+        });
+      }
+
+      function show_comparison() {
+        $("#tools-content").html('<p>Check the following characteristics to include in the comparison summary:</p></br></br><p>New keywords: <input name="tags_new" value="" class="form-inline"></p></br></br><p>Different date range: <input id="startDate" class="form-inline" type="date" />  <input id="endDate" class="form-inline" type="date" /></p></br></br><div class="form-check"><input class="form-check-input" type="checkbox" value="" id="chk1"><label class="form-check-label" for="chk1">Individual user accounts</label></div><div class="form-check"><input class="form-check-input" type="checkbox" value="" id="chk2" checked><label class="form-check-label" for="chk2">Media/company accounts</label></div><div class="form-check"><input class="form-check-input" type="checkbox" value="" id="chk3" checked><label class="form-check-label" for="chk3">Reddit posts</label></div><div class="form-check"><input class="form-check-input" type="checkbox" value="" id="chk4" checked><label class="form-check-label" for="chk4">Twitter posts</label></div>');
+
+        // make the new input Tagify
+        var input = document.querySelector('input[name=tags_new]');
+        new Tagify(input)
+      }
+
+      function show_viz() {
+        $("#tools-content").html('<p>Check the following visualizations to view:</p></br><div class="form-check"><input class="form-check-input" type="checkbox" value="" id="chk1"><label class="form-check-label" for="chk1">Histograms of content by date</label></div><div class="form-check"><input class="form-check-input" type="checkbox" value="" id="chk2" checked><label class="form-check-label" for="chk2">Word frequency bar chart</label></div><div class="form-check"><input class="form-check-input" type="checkbox" value="" id="chk3" checked><label class="form-check-label" for="chk3">Word clouds</label></div><div class="form-check"><input class="form-check-input" type="checkbox" value="" id="chk4" checked><label class="form-check-label" for="chk4">Webs of original poster networks</label></div>');
+      }
+
+
+      // define options buttons capabilities
+      function change_btn(my_id) {
+        var btns_ids = ["#op_btn_1", "#op_btn_2", "#op_btn_3", "#op_btn_4"];
+
+        btns_ids.forEach(x => {
+          if($(x).hasClass("btn-selected")) {
+            $(x).removeClass("btn-selected");
+            $(x).addClass("btn-unselected");
+          }
+        });
+
+        $(my_id).removeClass("btn-unselected");
+        $(my_id).addClass("btn-selected");
+
+        if(my_id == "#op_btn_1") {
+          show_content_shown();
+        } else if(my_id == "#op_btn_2") {
+          show_date_range();
+        } else if(my_id == "#op_btn_3") {
+
+          show_data_sheet();
+        } else if(my_id == "#op_btn_4") {
+          show_diags();
+        }
+      }
+
+      function show_content_shown() {
+        $("#options-content").html(" \
+        <p>Most Influential Content</p><p>Pieces of Content Shown: 5</p></ br><p>Extractive Summary</p><p>Pieces of Content Shown: 5</p>");
+      }
+
+      function show_date_range() {
+        $("#options-content").html(date_info);
+      }
+
+      function show_data_sheet() {
+        $("#options-content").html(" \
+        <strong>What is fake news and how does Readit detect fake news?</strong><p>Fake news is discovered by using algorithms comparing news and its source to other piece of information on the same topic. These algorithms were developed by a team of researchers.</p> </ br> <strong>What are stop words?</strong><p>Stop words are short words like âatâ, âitâ, âandâ, âtheâ, âorâ, âaâ, âanâ that have no meaning compared to the other words in content. When Readit creates extractive summaries, it removes all the stop words before calculating values for the remaining words. The remaining words have more independent meaning.</p> </ br> <strong>What methodology was used to create this system?</strong><p>An extractive summarization method is used to create the summary. This method works by assigning a value to each word, then ranks sentences based on the sum of the words' values. This method differs from other summary forms such as abstractive summarization, which generates a summary based on previous documents that it was trained on.</p>");
+      }
+
+      function show_diags() {
+        $("#options-content").html(" \
+        <p>Number of pieces of content analyzed: 1,020</p></ br> \
+        <p>Original poster locations: London, New York, Phoenix, Dubai, Washington DC, Los Angeles ...</p></ br> \
+        <p>Number of original posters: 342</p></ br> \
+        <p>Content with misspellings: 245</p></ br> \
+        <p>Content with emojis: 657</p></ br> \
+        <p>Content with foreign characters: 24</p></ br> \
+        <p>Content with machine generated fake news: 55</p></ br> \
+        <p>Content with human generated fake news: 61</p></ br></p>");
+      }
+
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js" crossorigin="anonymous"></script>
+
+  </body>
+</html>

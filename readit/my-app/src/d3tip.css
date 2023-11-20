@@ -1,0 +1,193 @@
+.d3-tip {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.4;
+    padding: 8px;
+    pointer-events: none !important;
+    color: #203d5d;
+    box-shadow: 0 4px 20px 4px rgba(0, 20, 60, 0.1), 0 4px 80px -8px rgba(0, 20, 60, 0.2);
+    /* background-color: #fff; */
+    background-color: rgba(255, 255, 255);
+    border-radius: 4px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 14px;
+    width: 100%;
+    line-height: 1;
+    color: #fff;
+    position: absolute;
+    pointer-events: none;
+}
+
+/* Northward tooltips */
+.d3-tip.n:after {
+    content: "▼";
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
+    text-align: center;
+}
+
+/* Eastward tooltips */
+.d3-tip.e:after {
+    content: "◀";
+    margin: -4px 0 0 0;
+    top: 50%;
+    left: -8px;
+}
+
+/* Southward tooltips */
+.d3-tip.s:after {
+    content: "▲";
+    margin: 0 0 1px 0;
+    top: -8px;
+    left: 0;
+    text-align: center;
+}
+
+/* Westward tooltips */
+.d3-tip.w:after {
+    content: "▶";
+    margin: -4px 0 0 -1px;
+    top: 50%;
+    left: 100%;
+}
+
+/* g.row  rect:hover,
+g.column rect:hover {
+    fill: #fc8d59 !important;
+    stroke-width: 1px;
+} */
+
+/* .cell:hover, .bubble circle:hover, .bubble text:hover{
+    fill: #fc8d59 !important;
+} */
+
+.axis-label-x, .axis-label-y, .timeline-label-x, .cell, .nav-item, .bubble circle{ cursor: pointer; }
+
+.nav-item:hover {
+    color: darkblue !important;
+}
+
+#aboutpagediv span{
+    font-size: 16px;    
+}
+
+
+.doc-selected-topic{
+    padding: 0px 8px 0px 8px;
+    float: left;
+    width: 95%;
+    box-sizing: border-box;
+    margin: 0% 2% 0% 2%;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.doc-selected-size{
+    padding: 0px 8px 0px 8px;
+    float: left;
+    width: 95%;
+    box-sizing: border-box;
+    margin: 0% 2% 0% 2%;
+    font-size: 16px;
+}
+
+/* css styles for accordion */
+.accordionWrapper{
+    padding: 8px;
+    background:#fff;
+    float:left;
+    width:95%;
+    box-sizing:border-box;
+    margin:2%;    
+    /* box-shadow: 0 1.5em 85px 0 rgba(100, 100, 100, 0.2); */
+    border: 2px solid #D3D3D3;
+    border-radius: 5px;
+}
+.accordionItem{
+    float:left;
+    display:block;
+    width:100%;
+    box-sizing: border-box;
+    font-family:'Open-sans',Arial,sans-serif;
+}
+.accordionItemHeading{
+    cursor:pointer;
+    margin:0px 0px 10px 0px;
+    padding:10px;
+    background:#2980b9;
+    color:#fff;
+    width:100%;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+.title{
+    font-size: 16px;
+    font-weight: bold;
+}
+.date{
+    margin: 1px 0px 1px 0px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.summary{
+    font-size: 14px;
+    font-weight: normal;
+}
+.close .accordionItemContent{
+    height:0px;
+    transition:height 1s ease-out;
+    -webkit-transform: scaleY(0);
+    -o-transform: scaleY(0);
+    -ms-transform: scaleY(0);
+    transform: scaleY(0);
+    float: left;
+    display: block;
+}
+.open .accordionItemContent{
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    width: 100%;
+    margin: 0px 0px 10px 0px;
+    display:block;
+    -webkit-transform: scaleY(1);
+    -o-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: top;
+    -o-transform-origin: top;
+    -ms-transform-origin: top;
+    transform-origin: top;
+
+    -webkit-transition: -webkit-transform 0.4s ease-out;
+    -o-transition: -o-transform 0.4s ease;
+    -ms-transition: -ms-transform 0.4s ease;
+    transition: transform 0.4s ease;
+    box-sizing: border-box;
+}
+.open .accordionItemHeading{
+    margin:0px;
+    -webkit-border-top-left-radius: 3px;
+    -webkit-border-top-right-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-topright: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 0px;
+    -webkit-border-bottom-left-radius: 0px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background-color: #bdc3c7;
+    color: #7f8c8d;
+}
+
+    

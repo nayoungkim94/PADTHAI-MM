@@ -1,0 +1,32 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A simple bar chart with embedded data.",
+  "params": [
+    {
+      "name": "cornerRadius",
+      "value": 0,
+      "bind": {"input": "range", "min": 0, "max": 50, "step": 1}
+    }
+  ],
+  "data": {
+    "values": [
+      {"Keywords": "secur*", "Count": 9, "color": "#a6cee3"},
+      {"Keywords": "defen*", "Count": 3, "color": "#a6cee3"},
+      {"Keywords": "fight", "Count": 2, "color": "#1f78b4"},
+      {"Keywords": "damag*", "Count": 1, "color": "#1f78b4"},
+      {"Keywords": "killing", "Count": 1, "color": "#1f78b4"},
+      {"Keywords": "war", "Count": 1, "color": "#1f78b4"},
+      {"Keywords": "wars", "Count": 1, "color": "#1f78b4"}
+    ]
+  },
+  "mark": {"type": "bar", "cornerRadius": {"expr": "cornerRadius"}},
+  "encoding": {
+    "x": {"field": "Keywords", "type": "nominal", "axis": {"labelAngle": -45}, "sort": "Count"},
+    "y": {"field": "Count", "type": "quantitative"},
+    "color": {
+      "field": "color",
+      "type": "nominal",
+      "scale": null
+    }
+  }
+}
