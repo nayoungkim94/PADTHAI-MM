@@ -1,3 +1,5 @@
-# Facewise-READIT
+# Principled Approach for Designing Trustable Human-centered AI systems using MAST Methodology (PADTHAI-MM)
+
+Designing for AI trustworthiness is challenging, with a lack of practical guidance despite extensive literature on trust. The Multisource AI Scorecard Table (MAST), a checklist rating system, addresses this gap in designing and evaluating AI-enabled decision support systems. We propose the Principled Approach for Designing Trustable Human-centered AI systems using MAST Methodology (PADTHAI-MM), a nine-step framework what we demonstrate through the iterative design of a text analysis platform called the REporting Assistant for Defense and Intelligence Tasks (READIT). We designed two versions of READIT, high-MAST including AI context and explanations, and low-MAST resembling a ``black box'' type system. Participant feedback and state-of-the-art AI knowledge was integrated in the design process, leading to a redesigned prototype tested by participants in an intelligence reporting task. 
 
 See README under readit and facewise folder for detailed instructions of implementation. 
